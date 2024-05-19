@@ -1,2 +1,4 @@
+0.0.2-1.20.4:
+ - Adding new block Box Cross
 0.0.1-1.20.4:
  - First version
