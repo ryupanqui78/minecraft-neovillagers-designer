@@ -19,9 +19,10 @@ public class SetupCreativeModTab {
                     () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.neovillager.decoration"))
                             .withTabsBefore(CreativeModeTabs.REDSTONE_BLOCKS)
                             .icon(() -> SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get().getDefaultInstance())
-                            .displayItems(
-                                    (parameters, output) -> output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get()))
-                            .build());
+                            .displayItems((parameters, output) -> {
+                                output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get());
+                                output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK_ITEM.get());
+                            }).build());
     
     private SetupCreativeModTab() {
         
