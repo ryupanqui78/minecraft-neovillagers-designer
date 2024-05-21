@@ -22,6 +22,7 @@ public class SetupCreativeModTab {
                             .displayItems((parameters, output) -> {
                                 output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK_ITEM.get());
+                                output.accept(SetupBlocks.DECOR_BOX_BLOCK_ITEM.get());
                             }).build());
     
     private SetupCreativeModTab() {

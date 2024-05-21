@@ -13,6 +13,7 @@ public class SetupBlocks {
     
     private static final String DECORATION_BOX_CROSS_BLOCK_NAME = "decoration_box_cross";
     private static final String DECORATION_BOX_FIX_BLOCK_NAME = "decoration_box_fix";
+    private static final String DECORATION_BOX_BLOCK_NAME = "decoration_box";
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoVillagersDesigner.MODID);
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoVillagersDesigner.MODID);
@@ -24,12 +25,17 @@ public class SetupBlocks {
     public static final DeferredBlock<Block> DECOR_BOX_FIX_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_FIX_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(0.8F).requiresCorrectToolForDrops());
+    public static final DeferredBlock<Block> DECOR_BOX_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+            SetupBlocks.DECORATION_BOX_BLOCK_NAME, Block::new,
+            BlockBehaviour.Properties.of().strength(0.8F).requiresCorrectToolForDrops());
     
     // Register Single block Items
     public static final DeferredItem<BlockItem> DECOR_BOX_CROSS_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_CROSS_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_FIX_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_FIX_BLOCK);
+    public static final DeferredItem<BlockItem> DECOR_BOX_BLOCK_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_BLOCK);
     
     private SetupBlocks() {
     }
