@@ -1,8 +1,10 @@
-0.0.4-1.20.4::
- - Adding new block Box
+0.0.5-1.20.4:
+ - Adding new block Decoration Composter
+0.0.4-1.20.4:
+ - Adding new block Decoration Box
 0.0.3-1.20.4:
- - Adding new block Box Fix
+ - Adding new block Decoration Box Fix
 0.0.2-1.20.4:
- - Adding new block Box Cross
+ - Adding new block Decoration Box Cross
 0.0.1-1.20.4:
  - First version
