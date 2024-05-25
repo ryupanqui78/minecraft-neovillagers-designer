@@ -1,3 +1,5 @@
+0.0.6-1.20.4:
+ - Adding new block Decoration Chest
 0.0.5-1.20.4:
  - Adding new block Decoration Composter
 0.0.4-1.20.4:

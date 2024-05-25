@@ -1,5 +1,6 @@
 package com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup;
 
+import com.ryu.minecraft.mod.neoforge.neovillagers.block.DecorChestBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner;
 
 import net.minecraft.world.item.BlockItem;
@@ -22,16 +23,19 @@ public class SetupBlocks {
     // Register Single blocks
     public static final DeferredBlock<Block> DECOR_BOX_CROSS_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_CROSS_BLOCK_NAME, Block::new,
-            BlockBehaviour.Properties.of().strength(0.8F).requiresCorrectToolForDrops());
+            BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
     public static final DeferredBlock<Block> DECOR_BOX_FIX_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_FIX_BLOCK_NAME, Block::new,
-            BlockBehaviour.Properties.of().strength(0.8F).requiresCorrectToolForDrops());
+            BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
     public static final DeferredBlock<Block> DECOR_BOX_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_BLOCK_NAME, Block::new,
-            BlockBehaviour.Properties.of().strength(0.8F).requiresCorrectToolForDrops());
+            BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
+    public static final DeferredBlock<Block> DECOR_CHEST_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+            DecorChestBlock.BLOCK_NAME, DecorChestBlock::new,
+            BlockBehaviour.Properties.of().strength(0.7f).requiresCorrectToolForDrops());
     public static final DeferredBlock<Block> DECOR_COMPOSTER_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_COMPOSTER_BLOCK_NAME, Block::new,
-            BlockBehaviour.Properties.of().strength(0.7F).requiresCorrectToolForDrops());
+            BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops());
     
     // Register Single block Items
     public static final DeferredItem<BlockItem> DECOR_BOX_CROSS_BLOCK_ITEM = SetupBlocks.ITEMS
@@ -40,6 +44,8 @@ public class SetupBlocks {
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_FIX_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_BLOCK);
+    public static final DeferredItem<BlockItem> DECOR_CHEST_BLOCK_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(SetupBlocks.DECOR_CHEST_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_COMPOSTER_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_COMPOSTER_BLOCK);
     
