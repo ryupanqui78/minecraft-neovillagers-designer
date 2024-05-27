@@ -1,7 +1,8 @@
 package com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup;
 
-import com.ryu.minecraft.mod.neoforge.neovillagers.block.DecorChestBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlock;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBlock;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
@@ -21,6 +22,9 @@ public class SetupBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoVillagersDesigner.MODID);
     
     // Register Single blocks
+    public static final DeferredBlock<Block> DECOR_BARREL_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+            DecorBarrelBlock.BLOCK_NAME, DecorBarrelBlock::new,
+            BlockBehaviour.Properties.of().strength(1.5f).requiresCorrectToolForDrops());
     public static final DeferredBlock<Block> DECOR_BOX_CROSS_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_CROSS_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
@@ -38,6 +42,8 @@ public class SetupBlocks {
             BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops());
     
     // Register Single block Items
+    public static final DeferredItem<BlockItem> DECOR_BARREL_BLOCK_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(SetupBlocks.DECOR_BARREL_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_CROSS_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_CROSS_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_FIX_BLOCK_ITEM = SetupBlocks.ITEMS

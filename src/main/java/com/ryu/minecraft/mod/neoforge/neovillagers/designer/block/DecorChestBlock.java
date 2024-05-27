@@ -1,4 +1,4 @@
-package com.ryu.minecraft.mod.neoforge.neovillagers.block;
+package com.ryu.minecraft.mod.neoforge.neovillagers.designer.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
