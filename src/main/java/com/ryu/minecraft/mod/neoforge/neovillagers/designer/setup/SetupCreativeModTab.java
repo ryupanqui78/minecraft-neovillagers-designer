@@ -24,6 +24,7 @@ public class SetupCreativeModTab {
                                 output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_BLOCK_ITEM.get());
+                                output.accept(SetupBlocks.DECOR_CAULDRON_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_CHEST_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_COMPOSTER_BLOCK_ITEM.get());
                             }).build());

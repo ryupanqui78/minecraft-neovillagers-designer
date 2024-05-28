@@ -2,6 +2,7 @@ package com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup;
 
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlock;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBlock;
 
 import net.minecraft.world.item.BlockItem;
@@ -37,6 +38,9 @@ public class SetupBlocks {
     public static final DeferredBlock<Block> DECOR_CHEST_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             DecorChestBlock.BLOCK_NAME, DecorChestBlock::new,
             BlockBehaviour.Properties.of().strength(0.7f).requiresCorrectToolForDrops());
+    public static final DeferredBlock<DecorCauldronBlock> DECOR_CAULDRON_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+            DecorCauldronBlock.BLOCK_NAME, DecorCauldronBlock::new,
+            BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
     public static final DeferredBlock<Block> DECOR_COMPOSTER_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_COMPOSTER_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops());
@@ -50,6 +54,8 @@ public class SetupBlocks {
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_FIX_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_BLOCK);
+    public static final DeferredItem<BlockItem> DECOR_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(DECOR_CAULDRON_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_CHEST_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_CHEST_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_COMPOSTER_BLOCK_ITEM = SetupBlocks.ITEMS
