@@ -4,6 +4,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBlock;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorWaterCauldronBlock;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
@@ -44,7 +45,9 @@ public class SetupBlocks {
     public static final DeferredBlock<Block> DECOR_COMPOSTER_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_COMPOSTER_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops());
-    
+    public static final DeferredBlock<Block> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+            DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new,
+            BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
     // Register Single block Items
     public static final DeferredItem<BlockItem> DECOR_BARREL_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BARREL_BLOCK);
@@ -55,11 +58,13 @@ public class SetupBlocks {
     public static final DeferredItem<BlockItem> DECOR_BOX_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
-            .registerSimpleBlockItem(DECOR_CAULDRON_BLOCK);
+            .registerSimpleBlockItem(SetupBlocks.DECOR_CAULDRON_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_CHEST_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_CHEST_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_COMPOSTER_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_COMPOSTER_BLOCK);
+    public static final DeferredItem<BlockItem> DECOR_WATER_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK);
     
     private SetupBlocks() {
     }

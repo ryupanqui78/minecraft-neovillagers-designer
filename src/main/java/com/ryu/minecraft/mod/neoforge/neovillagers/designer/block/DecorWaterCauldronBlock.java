@@ -18,35 +18,38 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class DecorCauldronBlock extends Block {
+public class DecorWaterCauldronBlock extends Block {
     
-    public static final String BLOCK_NAME = "decoration_cauldron";
+    public static final String BLOCK_NAME = "decoration_water_cauldron";
     
     private static final VoxelShape INSIDE = Block.box(2.0D, 4.0D, 2.0D, 14.0D, 16.0D, 14.0D);
     
     protected static final VoxelShape SHAPE = Shapes.join(Shapes.block(),
             Shapes.or(Block.box(0.0D, 0.0D, 4.0D, 16.0D, 3.0D, 12.0D), Block.box(4.0D, 0.0D, 0.0D, 12.0D, 3.0D, 16.0D),
-                    Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D), DecorCauldronBlock.INSIDE),
+                    Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D), DecorWaterCauldronBlock.INSIDE),
             BooleanOp.ONLY_FIRST);
     
-    public DecorCauldronBlock(Properties properties) {
+    public DecorWaterCauldronBlock(Properties properties) {
         super(properties);
     }
     
     @Override
-    public VoxelShape getInteractionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return DecorCauldronBlock.INSIDE;
+    public VoxelShape getInteractionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+        return DecorWaterCauldronBlock.INSIDE;
     }
     
     @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext context) {
-        return DecorCauldronBlock.SHAPE;
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return DecorWaterCauldronBlock.SHAPE;
     }
     
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         final ItemStack itemStack = pPlayer.getItemInHand(pHand);
-        if (itemStack.is(Items.WATER_BUCKET)) {
+        if (itemStack.is(Items.BUCKET)) {
+            DecorCauldronHelper.fillBucket(pLevel, pPos, pPlayer, pHand, itemStack);
+            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        } else if (itemStack.is(Items.WATER_BUCKET)) {
             DecorCauldronHelper.fillCauldron(pLevel, pPos, pPlayer, pHand, itemStack);
             return InteractionResult.sidedSuccess(pLevel.isClientSide);
         }

@@ -27,6 +27,7 @@ public class SetupCreativeModTab {
                                 output.accept(SetupBlocks.DECOR_CAULDRON_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_CHEST_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_COMPOSTER_BLOCK_ITEM.get());
+                                output.accept(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK_ITEM.get());
                             }).build());
     
     private SetupCreativeModTab() {

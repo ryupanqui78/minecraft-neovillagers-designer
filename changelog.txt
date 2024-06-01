@@ -1,3 +1,7 @@
+0.0.9-1.20.4:
+ - Adding new block Decoration Water Cauldron, that is used when filled the decoration cauldron with water.
+ - Implement filling the decoration cauldron using water bucket, as a normal cauldron.
+ - Implement getting the water from full cauldron using bucket, as a normal cauldron.
 0.0.8-1.20.4:
  - Adding new block Decoration Cauldron
 0.0.7-1.20.4:
