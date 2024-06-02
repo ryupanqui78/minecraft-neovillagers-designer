@@ -16,7 +16,8 @@ public class SetupCreativeModTab {
     
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> DECORATION_TAB = SetupCreativeModTab.CREATIVE_MODE_TABS
             .register("decoration_tab",
-                    () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.neovillager.decoration"))
+                    () -> CreativeModeTab.builder()
+                            .title(Component.translatable("itemGroup.neovillagersdesigner.decoration"))
                             .withTabsBefore(CreativeModeTabs.REDSTONE_BLOCKS)
                             .icon(() -> SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get().getDefaultInstance())
                             .displayItems((parameters, output) -> {

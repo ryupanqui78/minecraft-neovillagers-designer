@@ -7,6 +7,7 @@
   "block.neovillagersdesigner.decoration_water_cauldron": "Decoration Cauldron Full",
   "block.neovillagersdesigner.decoration_chest": "Decoration Chest",
   "block.neovillagersdesigner.decoration_composter": "Decoration Composter",
+  "block.neovillagersdesigner.designer_table": "Designer table",
   
-  "itemGroup.neovillager.decoration": "Decoration Blocks"
+  "itemGroup.neovillagersdesigner.decoration": "Decoration Blocks"
 }

@@ -1,3 +1,5 @@
+0.0.10-1.20.4:
+ - Adding new block Designer table
 0.0.9-1.20.4:
  - Adding new block Decoration Water Cauldron, that is used when filled the decoration cauldron with water.
  - Implement filling the decoration cauldron using water bucket, as a normal cauldron.

@@ -8,6 +8,7 @@
     "neovillagersdesigner:decoration_cauldron",
     "neovillagersdesigner:decoration_chest",
     "neovillagersdesigner:decoration_composter",
-    "neovillagersdesigner:decoration_water_cauldron"
+    "neovillagersdesigner:decoration_water_cauldron",
+    "neovillagersdesigner:block/designer_table"
   ]
 }

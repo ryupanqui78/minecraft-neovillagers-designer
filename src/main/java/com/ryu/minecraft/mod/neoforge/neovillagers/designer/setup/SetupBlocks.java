@@ -5,6 +5,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlo
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorWaterCauldronBlock;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DesignerBlock;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +23,15 @@ public class SetupBlocks {
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoVillagersDesigner.MODID);
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoVillagersDesigner.MODID);
+    
+    // Block
+    public static final DeferredBlock<Block> DESIGNER_TABLE_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+            DesignerBlock.BLOCK_NAME, DesignerBlock::new,
+            BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops());
+    
+    // Item
+    public static final DeferredItem<BlockItem> DESIGNER_TABLE_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(SetupBlocks.DESIGNER_TABLE_BLOCK);
     
     // Register Single blocks
     public static final DeferredBlock<Block> DECOR_BARREL_BLOCK = SetupBlocks.BLOCKS.registerBlock(
