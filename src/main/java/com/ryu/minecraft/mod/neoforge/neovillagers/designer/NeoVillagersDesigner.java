@@ -2,6 +2,7 @@ package com.ryu.minecraft.mod.neoforge.neovillagers.designer;
 
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlocks;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupCreativeModTab;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupVillagers;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -18,6 +19,8 @@ public class NeoVillagersDesigner {
         SetupBlocks.BLOCKS.register(modEventBus);
         
         SetupCreativeModTab.CREATIVE_MODE_TABS.register(modEventBus);
+        
+        SetupVillagers.register(modEventBus);
         
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

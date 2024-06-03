@@ -9,5 +9,7 @@
   "block.neovillagersdesigner.decoration_composter": "Decoration Composter",
   "block.neovillagersdesigner.designer_table": "Designer table",
   
+  "entity.minecraft.villager.neovillagersdesigner.designer": "Designer",
+  
   "itemGroup.neovillagersdesigner.decoration": "Decoration Blocks"
 }

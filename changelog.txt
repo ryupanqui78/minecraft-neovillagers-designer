@@ -1,3 +1,6 @@
+0.0.11-1.20.4:
+ - Adding new villager: The Designer
+ - Fixing issue with Designer table
 0.0.10-1.20.4:
  - Adding new block Designer table
 0.0.9-1.20.4:
