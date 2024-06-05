@@ -11,5 +11,7 @@
   
   "entity.minecraft.villager.neovillagersdesigner.designer": "Designer",
   
-  "itemGroup.neovillagersdesigner.decoration": "Decoration Blocks"
+  "itemGroup.neovillagersdesigner.decoration": "Decoration Blocks",
+  
+  "screen.container.designer": "Designer table"
 }

@@ -1,12 +1,14 @@
 package com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup;
 
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.client.DesignerScreen;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
 @Mod.EventBusSubscriber(modid = NeoVillagersDesigner.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SetupClientModEvents {
@@ -24,6 +26,11 @@ public class SetupClientModEvents {
     public static void registerItemColor(RegisterColorHandlersEvent.Item event) {
         event.register((stack, tintIndex) -> SetupClientModEvents.WATER_COLOR_BLUE,
                 SetupBlocks.DECOR_WATER_CAULDRON_BLOCK.get().asItem());
+    }
+    
+    @SubscribeEvent
+    public static void registerMenuSreen(RegisterMenuScreensEvent event) {
+        event.register(SetupMenus.DESIGNER_CONTAINER.get(), DesignerScreen::new);
     }
     
     private SetupClientModEvents() {

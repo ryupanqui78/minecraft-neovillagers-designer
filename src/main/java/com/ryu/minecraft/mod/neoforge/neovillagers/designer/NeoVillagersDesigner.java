@@ -1,7 +1,9 @@
 package com.ryu.minecraft.mod.neoforge.neovillagers.designer;
 
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlockEntity;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlocks;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupCreativeModTab;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupMenus;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupVillagers;
 
 import net.minecraft.world.item.CreativeModeTabs;
@@ -19,6 +21,9 @@ public class NeoVillagersDesigner {
         SetupBlocks.BLOCKS.register(modEventBus);
         
         SetupCreativeModTab.CREATIVE_MODE_TABS.register(modEventBus);
+        
+        SetupBlockEntity.BLOCK_ENTITIES.register(modEventBus);
+        SetupMenus.MENUS.register(modEventBus);
         
         SetupVillagers.register(modEventBus);
         
