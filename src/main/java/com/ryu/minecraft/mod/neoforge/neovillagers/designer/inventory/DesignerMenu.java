@@ -114,6 +114,16 @@ public class DesignerMenu extends AbstractContainerMenu {
         return (pSlot.container != this.resultContainer) && super.canTakeItemForPickAll(pStack, pSlot);
     }
     
+    @Override
+    public boolean clickMenuButton(Player pPlayer, int pId) {
+        if (this.isValidRecipeIndex(pId)) {
+            this.selectedRecipeIndex.set(pId);
+            this.setupResultSlot();
+        }
+        
+        return true;
+    }
+    
     public int getNumRecipes() {
         return this.recipes.size();
     }
