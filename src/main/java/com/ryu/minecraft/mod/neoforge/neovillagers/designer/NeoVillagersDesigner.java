@@ -4,6 +4,8 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlockEnti
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlocks;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupCreativeModTab;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupMenus;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupRecipeSerializer;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupRecipeType;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupVillagers;
 
 import net.minecraft.world.item.CreativeModeTabs;
@@ -26,6 +28,9 @@ public class NeoVillagersDesigner {
         SetupMenus.MENUS.register(modEventBus);
         
         SetupVillagers.register(modEventBus);
+        
+        SetupRecipeType.REGISTER.register(modEventBus);
+        SetupRecipeSerializer.REGISTER.register(modEventBus);
         
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

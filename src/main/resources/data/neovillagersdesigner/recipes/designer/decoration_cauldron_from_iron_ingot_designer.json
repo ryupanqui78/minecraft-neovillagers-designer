@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "cauldron",
+  "ingredient": {
+     "item": "minecraft:iron_block"
+  },
+  "result": "neovillagersdesigner:decoration_cauldron",
+  "count": 2
+}

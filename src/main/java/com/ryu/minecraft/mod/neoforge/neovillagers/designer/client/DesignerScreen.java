@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.inventory.DesignerMenu;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.item.crafting.DesignerRecipe;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,7 +16,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -187,11 +187,11 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
     }
     
     private void renderRecipes(GuiGraphics pGuiGraphics, int startIndex, int pX, int pY, int pStartIndex) {
-        final List<RecipeHolder<StonecutterRecipe>> list = this.menu.getRecipes();
+        final List<RecipeHolder<DesignerRecipe>> list = this.menu.getRecipes();
         
         for (int i = startIndex; (i < pStartIndex) && (i < this.menu.getNumRecipes()); ++i) {
-            final int x = calculateX(i, pX);
-            final int y = calculateY(i, pY);
+            final int x = this.calculateX(i, pX);
+            final int y = this.calculateY(i, pY);
             pGuiGraphics.renderItem(list.get(i).value().getResultItem(this.minecraft.level.registryAccess()), x, y);
         }
     }
@@ -211,7 +211,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                         + 2;
                 if ((pX >= j1) && (pX < (j1 + DesignerScreen.RECIPES_IMAGE_SIZE_WIDTH)) && (pY >= k1)
                         && (pY < (k1 + DesignerScreen.RECIPES_IMAGE_SIZE_HEIGHT))) {
-                    final List<RecipeHolder<StonecutterRecipe>> list = this.menu.getRecipes();
+                    final List<RecipeHolder<DesignerRecipe>> list = this.menu.getRecipes();
                     pGuiGraphics.renderTooltip(this.font,
                             list.get(l).value().getResultItem(this.minecraft.level.registryAccess()), pX, pY);
                 }

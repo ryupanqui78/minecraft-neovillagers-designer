@@ -73,7 +73,7 @@ public class DesignerBlock extends BaseEntityBlock {
     
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide && pPlayer instanceof ServerPlayer) {
+        if (!pLevel.isClientSide && (pPlayer instanceof ServerPlayer)) {
             pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
             return InteractionResult.CONSUME;
         }
