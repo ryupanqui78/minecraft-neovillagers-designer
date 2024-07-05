@@ -6,11 +6,11 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.client.DesignerScree
 import net.minecraft.client.renderer.BiomeColors;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
-@Mod.EventBusSubscriber(modid = NeoVillagersDesigner.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = NeoVillagersDesigner.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class SetupClientModEvents {
     
     private static final int WATER_COLOR_BLUE = -12827478;

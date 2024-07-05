@@ -13,6 +13,7 @@ import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 
 public class EmeraldForItemVillagerType implements VillagerTrades.ItemListing {
@@ -37,7 +38,7 @@ public class EmeraldForItemVillagerType implements VillagerTrades.ItemListing {
     @Override
     public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
         if (pTrader instanceof final VillagerDataHolder villagerdataholder) {
-            final ItemStack itemstack = new ItemStack(this.trades.get(villagerdataholder.getVillagerData().getType()),
+            final ItemCost itemstack = new ItemCost(this.trades.get(villagerdataholder.getVillagerData().getType()),
                     this.cost);
             return new MerchantOffer(itemstack, new ItemStack(Items.EMERALD), this.maxUses, this.villagerXp, 0.05F);
         } else {

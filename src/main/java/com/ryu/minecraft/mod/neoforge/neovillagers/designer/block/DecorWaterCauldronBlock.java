@@ -4,7 +4,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.helpers.DecorCauldro
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -44,15 +44,14 @@ public class DecorWaterCauldronBlock extends Block {
     }
     
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        final ItemStack itemStack = pPlayer.getItemInHand(pHand);
-        if (itemStack.is(Items.BUCKET)) {
-            DecorCauldronHelper.fillBucket(pLevel, pPos, pPlayer, pHand, itemStack);
-            return InteractionResult.sidedSuccess(pLevel.isClientSide);
-        } else if (itemStack.is(Items.WATER_BUCKET)) {
-            DecorCauldronHelper.fillCauldron(pLevel, pPos, pPlayer, pHand, itemStack);
-            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+        if (pStack.is(Items.BUCKET)) {
+            DecorCauldronHelper.fillBucket(pLevel, pPos, pPlayer, pHand, pStack);
+            return ItemInteractionResult.sidedSuccess(pLevel.isClientSide);
+        } else if (pStack.is(Items.WATER_BUCKET)) {
+            DecorCauldronHelper.fillCauldron(pLevel, pPos, pPlayer, pHand, pStack);
+            return ItemInteractionResult.sidedSuccess(pLevel.isClientSide);
         }
-        return InteractionResult.PASS;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 }

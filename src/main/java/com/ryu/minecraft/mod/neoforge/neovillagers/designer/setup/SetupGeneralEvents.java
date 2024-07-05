@@ -5,10 +5,10 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.villagers.Designer;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.villagers.Worker;
 
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 
-@Mod.EventBusSubscriber(modid = NeoVillagersDesigner.MODID)
+@EventBusSubscriber(modid = NeoVillagersDesigner.MODID)
 public class SetupGeneralEvents {
     
     @SubscribeEvent
