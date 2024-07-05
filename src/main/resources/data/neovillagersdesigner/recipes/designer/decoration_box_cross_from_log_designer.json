@@ -4,6 +4,8 @@
   "ingredient": {
      "tag": "minecraft:logs"
   },
-  "result": "neovillagersdesigner:decoration_box_cross",
-  "count": 1
+  "result": {
+    "count": 1,
+    "id": "neovillagersdesigner:decoration_box_cross"
+  }
 }
