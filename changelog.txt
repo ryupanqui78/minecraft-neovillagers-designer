@@ -1,6 +1,7 @@
 1.0.14-1.20.6:
  - Updating to Minecraft 1.20.6.
  - Fixing the recipes.
+ - Release update to 1.20.6.
 1.0.13-1.20.4:
   - Fixing water cauldron breaking.
 1.0.12-1.20.4:
