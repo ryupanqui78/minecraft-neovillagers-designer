@@ -15,7 +15,7 @@ public class SetupRecipeSerializer {
             .create(Registries.RECIPE_SERIALIZER, NeoVillagersDesigner.MODID);
     
     public static final DeferredHolder<RecipeSerializer<?>, DesignerSerialize> DESIGNER = SetupRecipeSerializer.REGISTER
-            .register(DesignerRecipe.RECIPE_NAME, DesignerSerialize::new);
+            .register(DesignerRecipe.RECIPE_NAME, () -> new DesignerSerialize(DesignerRecipe::new));
     
     private SetupRecipeSerializer() {
         

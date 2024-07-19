@@ -1,17 +1,21 @@
+1.0.14-1.20.6:
+ - Updating to Minecraft 1.20.6.
+ - Fixing the recipes.
+ - Release update to 1.20.6.
 1.0.13-1.20.4:
-  - Fixing water cauldron breaking
+  - Fixing water cauldron breaking.
 1.0.12-1.20.4:
- - Release first version
+ - Release first version.
 0.0.12-1.20.4:
- - Adding the menu of designer table
- - Adding inventory to menu
- - Modify Screen to support new menu
- - Adding recipe for designer table
+ - Adding the menu of designer table.
+ - Adding inventory to menu.
+ - Modify Screen to support new menu.
+ - Adding recipe for designer table.
 0.0.11-1.20.4:
- - Adding new villager: The Designer
- - Fixing issue with Designer table
+ - Adding new villager: The Designer.
+ - Fixing issue with Designer table.
 0.0.10-1.20.4:
- - Adding new block Designer table
+ - Adding new block Designer table.
 0.0.9-1.20.4:
  - Adding new block Decoration Water Cauldron, that is used when filled the decoration cauldron with water.
  - Implement filling the decoration cauldron using water bucket, as a normal cauldron.

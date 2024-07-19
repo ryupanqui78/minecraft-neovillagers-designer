@@ -4,6 +4,8 @@
   "ingredient": {
      "item": "minecraft:iron_block"
   },
-  "result": "neovillagersdesigner:decoration_cauldron",
-  "count": 2
+  "result": {
+    "count": 2,
+    "id": "neovillagersdesigner:decoration_cauldron"
+  }
 }

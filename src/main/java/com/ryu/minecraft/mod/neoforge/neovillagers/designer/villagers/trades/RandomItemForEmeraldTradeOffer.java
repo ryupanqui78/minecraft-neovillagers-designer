@@ -8,6 +8,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 
 public class RandomItemForEmeraldTradeOffer implements VillagerTrades.ItemListing {
@@ -28,7 +29,7 @@ public class RandomItemForEmeraldTradeOffer implements VillagerTrades.ItemListin
     public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
         final int i = pRandom.nextInt(this.listPossibleItems.size());
         final ItemStack itemStack = new ItemStack(this.listPossibleItems.get(i));
-        final ItemStack itemCost = new ItemStack(Items.EMERALD, this.cost);
+        final ItemCost itemCost = new ItemCost(Items.EMERALD, this.cost);
         return new MerchantOffer(itemCost, itemStack, this.maxUses, this.villagerXp, 0.05F);
     }
     
