@@ -25,16 +25,15 @@ public class SetupBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoVillagersDesigner.MODID);
     
     // Block
-    public static final DeferredBlock<Block> DESIGNER_TABLE_BLOCK = SetupBlocks.BLOCKS.registerBlock(
-            DesignerBlock.BLOCK_NAME, DesignerBlock::new,
-            BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops());
+    public static final DeferredBlock<Block> DESIGNER = SetupBlocks.BLOCKS.registerBlock(DesignerBlock.BLOCK_NAME,
+            DesignerBlock::new, BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops());
     
     // Item
-    public static final DeferredItem<BlockItem> DESIGNER_TABLE_ITEM = SetupBlocks.ITEMS
-            .registerSimpleBlockItem(SetupBlocks.DESIGNER_TABLE_BLOCK);
+    public static final DeferredItem<BlockItem> DESIGNER_ITEM = SetupBlocks.ITEMS
+            .registerSimpleBlockItem(SetupBlocks.DESIGNER);
     
     // Register Single blocks
-    public static final DeferredBlock<Block> DECOR_BARREL_BLOCK = SetupBlocks.BLOCKS.registerBlock(
+    public static final DeferredBlock<DecorBarrelBlock> DECOR_BARREL_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             DecorBarrelBlock.BLOCK_NAME, DecorBarrelBlock::new,
             BlockBehaviour.Properties.of().strength(1.5f).requiresCorrectToolForDrops());
     public static final DeferredBlock<Block> DECOR_BOX_CROSS_BLOCK = SetupBlocks.BLOCKS.registerBlock(
@@ -55,9 +54,9 @@ public class SetupBlocks {
     public static final DeferredBlock<Block> DECOR_COMPOSTER_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_COMPOSTER_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops());
-    public static final DeferredBlock<Block> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks.BLOCKS.registerBlock(
-            DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new,
-            BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
+    public static final DeferredBlock<DecorWaterCauldronBlock> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks.BLOCKS
+            .registerBlock(DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new,
+                    BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
     // Register Single block Items
     public static final DeferredItem<BlockItem> DECOR_BARREL_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BARREL_BLOCK);

@@ -1,0 +1,10 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "neovillagersdesigner:block/cube_front_top",
+	"textures": {
+		"bottom": "neovillagersdesigner:block/designer_bottom",
+    "top": "neovillagersdesigner:block/designer_top",
+    "front": "neovillagersdesigner:block/designer_front",
+    "side": "neovillagersdesigner:block/designer_side"
+	}
+}

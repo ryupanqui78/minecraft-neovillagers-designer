@@ -1,7 +1,6 @@
 package com.ryu.minecraft.mod.neoforge.neovillagers.designer.block;
 
 import com.mojang.serialization.MapCodec;
-import com.ryu.minecraft.mod.neoforge.neovillagers.designer.entity.DesignerBlockEntity;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.inventory.DesignerMenu;
 
 import net.minecraft.core.BlockPos;
@@ -15,20 +14,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class DesignerBlock extends BaseEntityBlock {
+public class DesignerBlock extends Block {
     
-    public static final String BLOCK_NAME = "designer_table";
+    public static final String BLOCK_NAME = "designer";
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final MapCodec<DesignerBlock> CODEC = BlockBehaviour.simpleCodec(DesignerBlock::new);
     
@@ -40,7 +37,7 @@ public class DesignerBlock extends BaseEntityBlock {
     }
     
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
+    protected MapCodec<DesignerBlock> codec() {
         return DesignerBlock.CODEC;
     }
     
@@ -63,11 +60,6 @@ public class DesignerBlock extends BaseEntityBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(DesignerBlock.FACING, context.getHorizontalDirection().getOpposite());
-    }
-    
-    @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new DesignerBlockEntity(pPos, pState);
     }
     
     @Override

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CFC",
+    "#$#",
+    "@@@"
+  ],
+  "key": {
+    "$": {
+      "item": "minecraft:paper"
+    },
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "@": {
+      "tag": "minecraft:planks"
+    },
+    "C": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "F": {
+      "tag": "minecraft:flowers"
+    }
+  },
+  "result": {
+    "id": "neovillagersdesigner:designer",
+    "count": 1
+  }
+}

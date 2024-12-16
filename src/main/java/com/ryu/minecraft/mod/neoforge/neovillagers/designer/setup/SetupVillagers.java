@@ -20,12 +20,10 @@ public class SetupVillagers {
     public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS = DeferredRegister
             .create(BuiltInRegistries.VILLAGER_PROFESSION, NeoVillagersDesigner.MODID);
     
-    public static final DeferredHolder<PoiType, PoiType> DESIGNER_POI = SetupVillagers.POI_TYPES
-            .register(Designer.ENTITY_POI_NAME,
-                    () -> new PoiType(
-                            ImmutableSet.copyOf(
-                                    SetupBlocks.DESIGNER_TABLE_BLOCK.get().getStateDefinition().getPossibleStates()),
-                            1, 1));
+    public static final DeferredHolder<PoiType, PoiType> DESIGNER_POI = SetupVillagers.POI_TYPES.register(
+            Designer.ENTITY_POI_NAME,
+            () -> new PoiType(ImmutableSet.copyOf(SetupBlocks.DESIGNER.get().getStateDefinition().getPossibleStates()),
+                    1, 1));
     
     public static final DeferredHolder<VillagerProfession, VillagerProfession> DESIGNER = SetupVillagers.VILLAGER_PROFESSIONS
             .register(Designer.ENTITY_NAME,

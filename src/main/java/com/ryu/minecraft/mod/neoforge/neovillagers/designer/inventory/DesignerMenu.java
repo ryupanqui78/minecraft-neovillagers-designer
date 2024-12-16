@@ -3,6 +3,7 @@ package com.ryu.minecraft.mod.neoforge.neovillagers.designer.inventory;
 import java.util.List;
 
 import com.google.common.collect.Lists;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.inventory.slots.ResultSingleSlot;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.item.crafting.DesignerRecipe;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlocks;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupMenus;
@@ -22,6 +23,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
 public class DesignerMenu extends AbstractContainerMenu {
@@ -31,12 +33,16 @@ public class DesignerMenu extends AbstractContainerMenu {
     private static final int INV_SLOT_START = 2;
     private static final int USE_ROW_SLOT_END = 38;
     
-    private final DataSlot selectedRecipeIndex = DataSlot.standalone();
+    protected static SingleRecipeInput createRecipeInput(Container container) {
+        return new SingleRecipeInput(container.getItem(0));
+    }
+    
     private final ContainerLevelAccess access;
-    private final Level level;
     private final Slot inputSlot;
+    private final Level level;
     private final Slot resultSlot;
     private final ResultContainer resultContainer = new ResultContainer();
+    private final DataSlot selectedRecipeIndex = DataSlot.standalone();
     
     private ItemStack input = ItemStack.EMPTY;
     private long lastSoundTime;
@@ -61,38 +67,8 @@ public class DesignerMenu extends AbstractContainerMenu {
         super(SetupMenus.DESIGNER_CONTAINER.get(), pContainerId);
         this.access = pAccess;
         this.level = playerInv.player.level();
-        this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
-        this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
-            
-            private List<ItemStack> getRelevantItems() {
-                return List.of(DesignerMenu.this.inputSlot.getItem());
-            }
-            
-            @Override
-            public boolean mayPlace(ItemStack pStack) {
-                return false;
-            }
-            
-            @Override
-            public void onTake(Player pPlayer, ItemStack pStack) {
-                pStack.onCraftedBy(pPlayer.level(), pPlayer, pStack.getCount());
-                DesignerMenu.this.resultContainer.awardUsedRecipes(pPlayer, this.getRelevantItems());
-                final ItemStack itemstack = DesignerMenu.this.inputSlot.remove(1);
-                if (!itemstack.isEmpty()) {
-                    DesignerMenu.this.setupResultSlot();
-                }
-                
-                pAccess.execute((pLevel, pPos) -> {
-                    final long l = pLevel.getGameTime();
-                    if (DesignerMenu.this.lastSoundTime != l) {
-                        pLevel.playSound(null, pPos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F,
-                                1.0F);
-                        DesignerMenu.this.lastSoundTime = l;
-                    }
-                });
-                super.onTake(pPlayer, pStack);
-            }
-        });
+        this.inputSlot = this.addSlot(new Slot(this.container, 0, 16, 33));
+        this.resultSlot = this.addSlot(new ResultSingleSlot(this.resultContainer, 1, 140, 33, this));
         
         this.addInventorySlots(playerInv);
         this.addDataSlot(this.selectedRecipeIndex);
@@ -124,12 +100,13 @@ public class DesignerMenu extends AbstractContainerMenu {
         return true;
     }
     
-    public int getNumRecipes() {
-        return this.recipes.size();
+    private ItemStack getItemStackFromIndex(int index, Level level) {
+        final RecipeHolder<DesignerRecipe> recipeholder = this.recipes.get(index);
+        return recipeholder.value().assemble(DesignerMenu.createRecipeInput(this.container), level.registryAccess());
     }
     
-    public List<RecipeHolder<DesignerRecipe>> getRecipes() {
-        return this.recipes;
+    public int getNumRecipes() {
+        return this.recipes.size();
     }
     
     public int getSelectedRecipeIndex() {
@@ -140,8 +117,30 @@ public class DesignerMenu extends AbstractContainerMenu {
         return this.inputSlot.hasItem() && !this.recipes.isEmpty();
     }
     
+    private boolean isIngredient(Level pLevel, SingleRecipeInput pSingleRecipeInput) {
+        return pLevel.getRecipeManager().getRecipeFor(SetupRecipeType.DESIGNER.get(), pSingleRecipeInput, pLevel)
+                .isPresent();
+    }
+    
     private boolean isValidRecipeIndex(int pRecipeIndex) {
         return (pRecipeIndex >= 0) && (pRecipeIndex < this.recipes.size());
+    }
+    
+    public void onTake(Player pPlayer, ItemStack pStack) {
+        pStack.onCraftedBy(pPlayer.level(), pPlayer, pStack.getCount());
+        DesignerMenu.this.resultContainer.awardUsedRecipes(pPlayer, List.of(this.inputSlot.getItem()));
+        final ItemStack itemstack = DesignerMenu.this.inputSlot.remove(1);
+        if (!itemstack.isEmpty()) {
+            DesignerMenu.this.setupResultSlot();
+        }
+        
+        this.access.execute((pLevel, pPos) -> {
+            final long l = pLevel.getGameTime();
+            if (DesignerMenu.this.lastSoundTime != l) {
+                pLevel.playSound(null, pPos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
+                DesignerMenu.this.lastSoundTime = l;
+            }
+        });
     }
     
     private boolean quickMoveInventory(int pIndex, ItemStack itemstack1) {
@@ -178,9 +177,7 @@ public class DesignerMenu extends AbstractContainerMenu {
             if (!this.moveItemStackTo(itemstack1, DesignerMenu.INV_SLOT_START, DesignerMenu.USE_ROW_SLOT_END, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (this.level.getRecipeManager()
-                .getRecipeFor(SetupRecipeType.DESIGNER.get(), new SimpleContainer(itemstack1), this.level)
-                .isPresent()) {
+        } else if (this.isIngredient(this.level, new SingleRecipeInput(itemstack1))) {
             if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                 return ItemStack.EMPTY;
             }
@@ -214,23 +211,13 @@ public class DesignerMenu extends AbstractContainerMenu {
         this.access.execute((pLevel, pPos) -> this.clearContainer(pPlayer, this.container));
     }
     
-    private void setupRecipeList(Container pContainer, ItemStack pStack) {
-        this.recipes.clear();
-        this.selectedRecipeIndex.set(-1);
-        this.resultSlot.set(ItemStack.EMPTY);
-        if (!pStack.isEmpty()) {
-            this.recipes = this.level.getRecipeManager().getRecipesFor(SetupRecipeType.DESIGNER.get(), pContainer,
-                    this.level);
-        }
-    }
-    
     protected void setupResultSlot() {
-        if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-            final RecipeHolder<DesignerRecipe> recipeholder = this.recipes.get(this.selectedRecipeIndex.get());
-            final ItemStack itemstack = recipeholder.value().assemble(this.container, this.level.registryAccess());
-            if (itemstack.isItemEnabled(this.level.enabledFeatures())) {
-                this.resultContainer.setRecipeUsed(recipeholder);
-                this.resultSlot.set(itemstack);
+        final int index = this.selectedRecipeIndex.get();
+        if (!this.recipes.isEmpty() && this.isValidRecipeIndex(index)) {
+            final ItemStack itemStack = this.getItemStackFromIndex(index, this.level);
+            if (itemStack.isItemEnabled(this.level.enabledFeatures())) {
+                this.resultContainer.setRecipeUsed(this.recipes.get(index));
+                this.resultSlot.set(itemStack);
             } else {
                 this.resultSlot.set(ItemStack.EMPTY);
             }
@@ -246,13 +233,23 @@ public class DesignerMenu extends AbstractContainerMenu {
         final ItemStack itemstack = this.inputSlot.getItem();
         if (!itemstack.is(this.input.getItem())) {
             this.input = itemstack.copy();
-            this.setupRecipeList(pInventory, itemstack);
+            this.recipes.clear();
+            this.selectedRecipeIndex.set(-1);
+            this.resultSlot.set(ItemStack.EMPTY);
+            if (!itemstack.isEmpty()) {
+                this.recipes = this.level.getRecipeManager().getRecipesFor(SetupRecipeType.DESIGNER.get(),
+                        DesignerMenu.createRecipeInput(this.container), this.level);
+            }
         }
     }
     
     @Override
     public boolean stillValid(Player pPlayer) {
-        return AbstractContainerMenu.stillValid(this.access, pPlayer, SetupBlocks.DESIGNER_TABLE_BLOCK.get());
+        return AbstractContainerMenu.stillValid(this.access, pPlayer, SetupBlocks.DESIGNER.get());
+    }
+    
+    public List<RecipeHolder<DesignerRecipe>> getRecipes() {
+        return this.recipes;
     }
     
 }

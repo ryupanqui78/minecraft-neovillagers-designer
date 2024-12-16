@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neovillagersdesigner:block/designer"
+    },
+    "facing=east": {
+      "model": "neovillagersdesigner:block/designer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neovillagersdesigner:block/designer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neovillagersdesigner:block/designer",
+      "y": 270
+    }
+  }
+}
