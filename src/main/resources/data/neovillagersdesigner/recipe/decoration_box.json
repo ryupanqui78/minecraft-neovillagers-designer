@@ -5,12 +5,8 @@
     "P"
   ],
   "key": {
-    "P": {
-      "tag": "minecraft:wooden_slabs"
-    },
-    "S": {
-      "item": "minecraft:note_block"
-    }
+    "P": "#minecraft:wooden_slabs",
+    "S": "minecraft:note_block"
   },
   "result": {
     "id": "neovillagersdesigner:decoration_box",

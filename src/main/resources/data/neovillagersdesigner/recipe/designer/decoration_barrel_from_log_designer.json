@@ -1,9 +1,7 @@
 {
   "type": "neovillagersdesigner:designer",
   "group": "barrel",
-  "ingredient": {
-     "tag": "minecraft:logs"
-  },
+  "ingredient": "#minecraft:logs",
   "result": {
     "id": "neovillagersdesigner:decoration_barrel",
     "count": 1

@@ -9,6 +9,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.item.crafting.Design
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -134,14 +135,15 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
     
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
-        pGuiGraphics.blit(DesignerScreen.TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
+        pGuiGraphics.blit(RenderType::guiTextured, DesignerScreen.TEXTURE, this.leftPos, this.topPos, 0, 0,
+                this.imageWidth, this.imageHeight, 256, 256);
         final int k = (int) (39.0F * this.scrollOffs);
         final int posScrollImageX = this.isScrollBarActive() ? 176 : 188;
         final int initialScrollPosX = this.leftPos + DesignerScreen.SCROLLER_START_X;
         final int initialScrollPosY = this.topPos + DesignerScreen.SCROLLER_START_Y;
         
-        pGuiGraphics.blit(DesignerScreen.TEXTURE, initialScrollPosX, initialScrollPosY + k, posScrollImageX, 0,
-                DesignerScreen.SCROLLER_WIDTH, DesignerScreen.SCROLLER_HEIGHT);
+        pGuiGraphics.blit(RenderType::guiTextured, DesignerScreen.TEXTURE, initialScrollPosX, initialScrollPosY + k,
+                posScrollImageX, 0, DesignerScreen.SCROLLER_WIDTH, DesignerScreen.SCROLLER_HEIGHT, 256, 256);
         this.renderButtons(pGuiGraphics, pMouseX, pMouseY);
     }
     
@@ -150,7 +152,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
         final int initialPosY = this.topPos + DesignerScreen.RESULT_START_Y;
         final int indexLastVisibleElement = this.startIndex
                 + (DesignerScreen.RECIPES_COLUMNS * DesignerScreen.RECIPES_ROWS);
-        final List<DesignerRecipe> list = this.menu.getRecipes().stream().map(RecipeHolder::value).toList();
+        final List<RecipeHolder<DesignerRecipe>> list = this.menu.getVisibleRecipes();
         
         for (int i = this.startIndex; (i < indexLastVisibleElement) && (i < this.menu.getNumRecipes()); ++i) {
             final int indexInScreen = i - this.startIndex;
@@ -167,10 +169,9 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                     && (pMouseY < (posIngredientY + DesignerScreen.RECIPES_IMAGE_SIZE))) {
                 posImageX = 18;
             }
-            pGuiGraphics.blit(DesignerScreen.TEXTURE, posIngredientX, posIngredientY, posImageX, 166,
-                    DesignerScreen.RECIPES_IMAGE_SIZE, DesignerScreen.RECIPES_IMAGE_SIZE);
-            pGuiGraphics.renderItem(list.get(i).getResultItem(this.minecraft.level.registryAccess()),
-                    posIngredientX + 1, posIngredientY + 1);
+            pGuiGraphics.blit(RenderType::guiTextured, DesignerScreen.TEXTURE, posIngredientX, posIngredientY,
+                    posImageX, 166, DesignerScreen.RECIPES_IMAGE_SIZE, DesignerScreen.RECIPES_IMAGE_SIZE, 256, 256);
+            pGuiGraphics.renderItem(list.get(i).value().getResult(), posIngredientX + 1, posIngredientY + 1);
         }
     }
     
@@ -182,7 +183,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
             final int initialPosY = this.topPos + DesignerScreen.RESULT_START_Y;
             final int indexLastVisibleElement = this.startIndex
                     + (DesignerScreen.RECIPES_COLUMNS * DesignerScreen.RECIPES_ROWS);
-            final List<DesignerRecipe> list = this.menu.getRecipes().stream().map(RecipeHolder::value).toList();
+            final List<RecipeHolder<DesignerRecipe>> list = this.menu.getVisibleRecipes();
             
             for (int i = this.startIndex; (i < indexLastVisibleElement) && (i < this.menu.getNumRecipes()); ++i) {
                 final int indexInScreen = i - this.startIndex;
@@ -193,10 +194,10 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                 if ((pMouseX >= posIngredientX) && (pMouseY >= posIngredientY)
                         && (pMouseX < (posIngredientX + DesignerScreen.RECIPES_IMAGE_SIZE))
                         && (pMouseY < (posIngredientY + DesignerScreen.RECIPES_IMAGE_SIZE))) {
-                    pGuiGraphics.renderTooltip(this.font,
-                            list.get(i).getResultItem(this.minecraft.level.registryAccess()), pMouseX, pMouseY);
+                    pGuiGraphics.renderTooltip(this.font, list.get(i).value().getResult(), pMouseX, pMouseY);
                 }
             }
         }
     }
+    
 }

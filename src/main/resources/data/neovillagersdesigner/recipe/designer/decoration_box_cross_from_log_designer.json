@@ -1,9 +1,7 @@
 {
   "type": "neovillagersdesigner:designer",
   "group": "note_block",
-  "ingredient": {
-     "tag": "minecraft:logs"
-  },
+  "ingredient": "#minecraft:logs",
   "result": {
     "id": "neovillagersdesigner:decoration_box_cross",
     "count": 1

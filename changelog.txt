@@ -1,3 +1,5 @@
+1.2.16-1.21.3:
+ - Updating to Minecraft 1.21.3.
 1.1.15-1.21.1:
  - Updating to Minecraft 1.21.1.
 1.0.14-1.20.6:

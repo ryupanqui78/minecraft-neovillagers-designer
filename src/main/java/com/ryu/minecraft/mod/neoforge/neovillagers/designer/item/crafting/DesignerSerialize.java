@@ -18,27 +18,28 @@ public class DesignerSerialize implements RecipeSerializer<DesignerRecipe> {
     private static final String ELEMENT_GROUP = "group";
     private static final String ELEMENT_RESULT = "result";
     
-    protected final SingleItemRecipe.Factory<DesignerRecipe> factory;
+    private final MapCodec<DesignerRecipe> codec;
+    private final StreamCodec<RegistryFriendlyByteBuf, DesignerRecipe> streamCodec;
     
     public DesignerSerialize(SingleItemRecipe.Factory<DesignerRecipe> pFactory) {
-        this.factory = pFactory;
+        this.codec = RecordCodecBuilder.mapCodec(element -> element.group(
+                Codec.STRING.optionalFieldOf(DesignerSerialize.ELEMENT_GROUP, "").forGetter(DesignerRecipe::group),
+                Ingredient.CODEC.fieldOf(DesignerSerialize.ELEMENT_INGREDIENT).forGetter(DesignerRecipe::input),
+                ItemStack.STRICT_CODEC.fieldOf(DesignerSerialize.ELEMENT_RESULT).forGetter(DesignerRecipe::getResult))
+                .apply(element, pFactory::create));
+        this.streamCodec = StreamCodec.composite(ByteBufCodecs.STRING_UTF8, DesignerRecipe::group,
+                Ingredient.CONTENTS_STREAM_CODEC, DesignerRecipe::input, ItemStack.STREAM_CODEC,
+                DesignerRecipe::getResult, pFactory::create);
     }
     
     @Override
     public MapCodec<DesignerRecipe> codec() {
-        return RecordCodecBuilder.mapCodec(elements -> elements.group(
-                Codec.STRING.optionalFieldOf(DesignerSerialize.ELEMENT_GROUP, "").forGetter(DesignerRecipe::getGroup),
-                Ingredient.CODEC_NONEMPTY.fieldOf(DesignerSerialize.ELEMENT_INGREDIENT)
-                        .forGetter(DesignerRecipe::getIngredient),
-                ItemStack.STRICT_CODEC.fieldOf(DesignerSerialize.ELEMENT_RESULT).forGetter(DesignerRecipe::getResult))
-                .apply(elements, this.factory::create));
+        return this.codec;
     }
     
     @Override
     public StreamCodec<RegistryFriendlyByteBuf, DesignerRecipe> streamCodec() {
-        return StreamCodec.composite(ByteBufCodecs.STRING_UTF8, DesignerRecipe::getGroup,
-                Ingredient.CONTENTS_STREAM_CODEC, DesignerRecipe::getIngredient, ItemStack.STREAM_CODEC,
-                DesignerRecipe::getResult, this.factory::create);
+        return this.streamCodec;
     }
     
 }

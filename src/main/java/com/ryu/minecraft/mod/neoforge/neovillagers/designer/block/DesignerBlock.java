@@ -20,13 +20,13 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class DesignerBlock extends Block {
     
     public static final String BLOCK_NAME = "designer";
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
     public static final MapCodec<DesignerBlock> CODEC = BlockBehaviour.simpleCodec(DesignerBlock::new);
     
     private static final Component CONTAINER_TITLE = Component.translatable("screen.container.designer");
@@ -68,7 +68,7 @@ public class DesignerBlock extends Block {
             pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
             return InteractionResult.CONSUME;
         }
-        return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        return InteractionResult.SUCCESS;
     }
     
 }

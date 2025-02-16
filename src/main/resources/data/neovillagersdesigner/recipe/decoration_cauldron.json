@@ -4,12 +4,8 @@
     "#C#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:iron_ingot"
-    },
-    "C": {
-      "item": "minecraft:cauldron"
-    }
+    "#": "minecraft:iron_ingot",
+    "C": "minecraft:cauldron"
   },
   "result": {
     "id": "neovillagersdesigner:decoration_cauldron",

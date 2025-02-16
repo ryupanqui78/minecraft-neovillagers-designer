@@ -4,7 +4,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.helpers.DecorCauldro
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -44,11 +44,11 @@ public class DecorCauldronBlock extends Block {
     }
     
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+    protected InteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (pStack.is(Items.WATER_BUCKET)) {
             DecorCauldronHelper.fillCauldron(pLevel, pPos, pPlayer, pHand, pStack);
-            return ItemInteractionResult.sidedSuccess(pLevel.isClientSide);
+            return InteractionResult.SUCCESS;
         }
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.PASS;
     }
 }

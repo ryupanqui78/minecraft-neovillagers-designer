@@ -6,21 +6,11 @@
     "@@@"
   ],
   "key": {
-    "$": {
-      "item": "minecraft:paper"
-    },
-    "#": {
-      "item": "minecraft:iron_ingot"
-    },
-    "@": {
-      "tag": "minecraft:planks"
-    },
-    "C": {
-      "tag": "minecraft:stone_crafting_materials"
-    },
-    "F": {
-      "tag": "minecraft:flowers"
-    }
+    "$": "minecraft:paper",
+    "#": "minecraft:iron_ingot",
+    "@": "#minecraft:planks",
+    "C": "#minecraft:stone_crafting_materials",
+    "F": "#minecraft:flowers"
   },
   "result": {
     "id": "neovillagersdesigner:designer",
