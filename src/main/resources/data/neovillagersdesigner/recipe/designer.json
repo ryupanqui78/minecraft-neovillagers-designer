@@ -10,7 +10,7 @@
     "#": "minecraft:iron_ingot",
     "@": "#minecraft:planks",
     "C": "#minecraft:stone_crafting_materials",
-    "F": "#minecraft:flowers"
+    "F": "#minecraft:small_flowers"
   },
   "result": {
     "id": "neovillagersdesigner:designer",

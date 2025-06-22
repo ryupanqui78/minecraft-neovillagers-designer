@@ -13,19 +13,11 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 @EventBusSubscriber(modid = NeoVillagersDesigner.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class SetupClientModEvents {
     
-    private static final int WATER_COLOR_BLUE = -12827478;
-    
     @SubscribeEvent
     public static void registerBlockColor(RegisterColorHandlersEvent.Block event) {
         event.register((state, blockAndTint, blockPos, color) -> (blockAndTint != null) && (blockPos != null)
                 ? BiomeColors.getAverageWaterColor(blockAndTint, blockPos)
                 : -1, SetupBlocks.DECOR_WATER_CAULDRON_BLOCK.get());
-    }
-    
-    @SubscribeEvent
-    public static void registerItemColor(RegisterColorHandlersEvent.Item event) {
-        event.register((stack, tintIndex) -> SetupClientModEvents.WATER_COLOR_BLUE,
-                SetupBlocks.DECOR_WATER_CAULDRON_BLOCK.get().asItem());
     }
     
     @SubscribeEvent
