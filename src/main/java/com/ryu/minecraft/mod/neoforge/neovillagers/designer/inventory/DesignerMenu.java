@@ -62,7 +62,7 @@ public class DesignerMenu extends AbstractContainerMenu {
     }
     
     public DesignerMenu(int pContainerId, Inventory playerInv, ContainerLevelAccess pAccess) {
-        super(SetupMenus.DESIGNER_CONTAINER.get(), pContainerId);
+        super(SetupMenus.DESIGNER.get(), pContainerId);
         this.access = pAccess;
         this.level = playerInv.player.level();
         this.inputSlot = this.addSlot(new Slot(this.container, 0, 16, 33));
@@ -123,7 +123,7 @@ public class DesignerMenu extends AbstractContainerMenu {
     }
     
     public void onTake(Player pPlayer, ItemStack pStack) {
-        pStack.onCraftedBy(pPlayer.level(), pPlayer, pStack.getCount());
+        pStack.onCraftedBy(pPlayer, pStack.getCount());
         this.resultContainer.awardUsedRecipes(pPlayer, List.of(this.inputSlot.getItem()));
         final ItemStack itemstack = DesignerMenu.this.inputSlot.remove(1);
         if (!itemstack.isEmpty()) {
@@ -163,7 +163,7 @@ public class DesignerMenu extends AbstractContainerMenu {
         final Item item = itemstack1.getItem();
         itemstack = itemstack1.copy();
         if (pIndex == 1) {
-            item.onCraftedBy(itemstack1, pPlayer.level(), pPlayer);
+            item.onCraftedBy(itemstack1, pPlayer);
             if (!this.moveItemStackTo(itemstack1, DesignerMenu.INV_SLOT_START, DesignerMenu.USE_ROW_SLOT_END, true)) {
                 return ItemStack.EMPTY;
             }

@@ -34,4 +34,5 @@ public class ItemForEmeraldTradeOffer implements VillagerTrades.ItemListing {
         return new MerchantOffer(new ItemCost(Items.EMERALD, this.emeraldCost), itemstack, this.maxUses,
                 this.villagerXp, this.priceMultiplier);
     }
+    
 }

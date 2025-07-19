@@ -13,13 +13,12 @@ public class SetupGeneralEvents {
     
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
-        if (event.getType() == SetupVillagers.DESIGNER.get()) {
+        if (event.getType() == SetupVillagers.DESIGNER) {
             final Worker worker = new Designer();
             worker.getTrades(event);
         }
     }
     
     private SetupGeneralEvents() {
-        
     }
 }

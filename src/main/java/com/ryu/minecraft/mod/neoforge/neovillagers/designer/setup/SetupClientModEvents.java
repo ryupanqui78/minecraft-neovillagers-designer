@@ -10,7 +10,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
-@EventBusSubscriber(modid = NeoVillagersDesigner.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = NeoVillagersDesigner.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class SetupClientModEvents {
     
     @SubscribeEvent
@@ -22,7 +22,7 @@ public class SetupClientModEvents {
     
     @SubscribeEvent
     public static void registerMenuSreen(RegisterMenuScreensEvent event) {
-        event.register(SetupMenus.DESIGNER_CONTAINER.get(), DesignerScreen::new);
+        event.register(SetupMenus.DESIGNER.get(), DesignerScreen::new);
     }
     
     private SetupClientModEvents() {

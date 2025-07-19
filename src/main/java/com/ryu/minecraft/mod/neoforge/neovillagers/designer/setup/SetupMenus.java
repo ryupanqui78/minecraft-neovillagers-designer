@@ -14,11 +14,9 @@ public class SetupMenus {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(BuiltInRegistries.MENU,
             NeoVillagersDesigner.MODID);
     
-    public static final DeferredHolder<MenuType<?>, MenuType<DesignerMenu>> DESIGNER_CONTAINER = SetupMenus.MENUS
-            .register(DesignerMenu.MENU_NAME,
-                    () -> new MenuType<DesignerMenu>(DesignerMenu::new, FeatureFlags.DEFAULT_FLAGS));
+    public static final DeferredHolder<MenuType<?>, MenuType<DesignerMenu>> DESIGNER = SetupMenus.MENUS.register(
+            DesignerMenu.MENU_NAME, () -> new MenuType<DesignerMenu>(DesignerMenu::new, FeatureFlags.DEFAULT_FLAGS));
     
     private SetupMenus() {
-        
     }
 }
