@@ -9,7 +9,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.item.crafting.Design
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -135,15 +135,16 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
     
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
-        pGuiGraphics.blit(RenderType::guiTextured, DesignerScreen.TEXTURE, this.leftPos, this.topPos, 0, 0,
+        pGuiGraphics.blit(RenderPipelines.GUI_TEXTURED, DesignerScreen.TEXTURE, this.leftPos, this.topPos, 0, 0,
                 this.imageWidth, this.imageHeight, 256, 256);
         final int k = (int) (39.0F * this.scrollOffs);
         final int posScrollImageX = this.isScrollBarActive() ? 176 : 188;
         final int initialScrollPosX = this.leftPos + DesignerScreen.SCROLLER_START_X;
         final int initialScrollPosY = this.topPos + DesignerScreen.SCROLLER_START_Y;
         
-        pGuiGraphics.blit(RenderType::guiTextured, DesignerScreen.TEXTURE, initialScrollPosX, initialScrollPosY + k,
-                posScrollImageX, 0, DesignerScreen.SCROLLER_WIDTH, DesignerScreen.SCROLLER_HEIGHT, 256, 256);
+        pGuiGraphics.blit(RenderPipelines.GUI_TEXTURED, DesignerScreen.TEXTURE, initialScrollPosX,
+                initialScrollPosY + k, posScrollImageX, 0, DesignerScreen.SCROLLER_WIDTH,
+                DesignerScreen.SCROLLER_HEIGHT, 256, 256);
         this.renderButtons(pGuiGraphics, pMouseX, pMouseY);
     }
     
@@ -169,7 +170,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                     && (pMouseY < (posIngredientY + DesignerScreen.RECIPES_IMAGE_SIZE))) {
                 posImageX = 18;
             }
-            pGuiGraphics.blit(RenderType::guiTextured, DesignerScreen.TEXTURE, posIngredientX, posIngredientY,
+            pGuiGraphics.blit(RenderPipelines.GUI_TEXTURED, DesignerScreen.TEXTURE, posIngredientX, posIngredientY,
                     posImageX, 166, DesignerScreen.RECIPES_IMAGE_SIZE, DesignerScreen.RECIPES_IMAGE_SIZE, 256, 256);
             pGuiGraphics.renderItem(list.get(i).value().getResult(), posIngredientX + 1, posIngredientY + 1);
         }
@@ -194,7 +195,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                 if ((pMouseX >= posIngredientX) && (pMouseY >= posIngredientY)
                         && (pMouseX < (posIngredientX + DesignerScreen.RECIPES_IMAGE_SIZE))
                         && (pMouseY < (posIngredientY + DesignerScreen.RECIPES_IMAGE_SIZE))) {
-                    pGuiGraphics.renderTooltip(this.font, list.get(i).value().getResult(), pMouseX, pMouseY);
+                    pGuiGraphics.setTooltipForNextFrame(this.font, list.get(i).value().getResult(), pMouseX, pMouseY);
                 }
             }
         }

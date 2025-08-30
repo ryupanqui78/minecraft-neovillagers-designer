@@ -19,7 +19,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.client.event.RegisterRecipeBookSearchCategoriesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -52,8 +51,6 @@ public class NeoVillagersDesigner {
         
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::registerPayloadHandlersEvent);
-        
-        modContainer.registerConfig(ModConfig.Type.COMMON, NeoVillagersDesignerConfig.SPEC);
     }
     
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
