@@ -74,7 +74,7 @@ public class Designer extends Worker {
     protected ItemListing[] getLevel3() {
         final ItemListing option1 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_CAULDRON_BLOCK.get().asItem(), 1, 1,
                 6, 4);
-        final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.CHAIN, 1, 3, 8, 4);
+        final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.IRON_CHAIN, 1, 3, 8, 4);
         final ItemListing option3 = new RandomItemForEmeraldTradeOffer(2, 6, 4, Designer.RANDOM_ITEMS);
         
         return new VillagerTrades.ItemListing[] { option1, option2, option3, };

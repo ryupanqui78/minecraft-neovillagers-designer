@@ -9,6 +9,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.item.crafting.Design
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
@@ -61,7 +62,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
     }
     
     @Override
-    public boolean mouseClicked(double pMouseX, double pMouseY, int pButton) {
+    public boolean mouseClicked(MouseButtonEvent event, boolean isDoubleClick) {
         this.scrolling = false;
         if (this.displayRecipes) {
             final int indexLastVisibleElement = this.startIndex
@@ -76,8 +77,8 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                 final int indexInScreen = i - this.startIndex;
                 final int carryX = indexInScreen % DesignerScreen.RECIPES_COLUMNS;
                 final int carryY = indexInScreen / DesignerScreen.RECIPES_COLUMNS;
-                final double d0 = pMouseX - (initialIngredientPosX + (carryX * DesignerScreen.RECIPES_IMAGE_SIZE));
-                final double d1 = pMouseY - (initialIngredientPosY + (carryY * DesignerScreen.RECIPES_IMAGE_SIZE));
+                final double d0 = event.x() - (initialIngredientPosX + (carryX * DesignerScreen.RECIPES_IMAGE_SIZE));
+                final double d1 = event.y() - (initialIngredientPosY + (carryY * DesignerScreen.RECIPES_IMAGE_SIZE));
                 if ((d0 >= 0.0) && (d1 >= 0.0) && (d0 < DesignerScreen.RECIPES_IMAGE_SIZE)
                         && (d1 < DesignerScreen.RECIPES_IMAGE_SIZE)
                         && this.menu.clickMenuButton(this.minecraft.player, i)) {
@@ -88,27 +89,27 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
                 }
             }
             
-            if ((pMouseX >= initialScrollPosX) && (pMouseX < (initialScrollPosX + DesignerScreen.SCROLLER_WIDTH))
-                    && (pMouseY >= initialScrollPosY) && (pMouseY < maxScrollPosY)) {
+            if ((event.x() >= initialScrollPosX) && (event.x() < (initialScrollPosX + DesignerScreen.SCROLLER_WIDTH))
+                    && (event.y() >= initialScrollPosY) && (event.y() < maxScrollPosY)) {
                 this.scrolling = true;
             }
         }
-        return super.mouseClicked(pMouseX, pMouseY, pButton);
+        return super.mouseClicked(event, isDoubleClick);
     }
     
     @Override
-    public boolean mouseDragged(double pMouseX, double pMouseY, int pButton, double pDragX, double pDragY) {
+    public boolean mouseDragged(MouseButtonEvent event, double mouseX, double mouseY) {
         if (this.scrolling && this.isScrollBarActive()) {
             final int initialScrollPosY = this.topPos + DesignerScreen.SCROLLER_START_Y;
             final int maxScrollPosY = initialScrollPosY + DesignerScreen.SCROLLER_CONTENT_SIZE;
-            this.scrollOffs = ((float) pMouseY - initialScrollPosY - 7.5f)
+            this.scrollOffs = ((float) event.y() - initialScrollPosY - 7.5f)
                     / (maxScrollPosY - initialScrollPosY - 15.0f);
             this.scrollOffs = Mth.clamp(this.scrollOffs, 0.0F, 1.0f);
             this.startIndex = (int) ((this.scrollOffs * this.getOffscreenRows()) + 0.5)
                     * DesignerScreen.RECIPES_COLUMNS;
             return true;
         } else {
-            return super.mouseDragged(pMouseX, pMouseY, pButton, pDragX, pDragY);
+            return super.mouseDragged(event, mouseX, mouseY);
         }
     }
     

@@ -64,7 +64,7 @@ public class DesignerBlock extends Block {
     
     @Override
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
-        if (!pLevel.isClientSide && (pPlayer instanceof ServerPlayer)) {
+        if (!pLevel.isClientSide() && (pPlayer instanceof ServerPlayer)) {
             pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
             return InteractionResult.CONSUME;
         }

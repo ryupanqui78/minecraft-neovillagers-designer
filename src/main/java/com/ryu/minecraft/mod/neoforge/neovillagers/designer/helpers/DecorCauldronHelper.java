@@ -19,7 +19,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 public class DecorCauldronHelper {
     
     public static void fillBucket(Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack itemStack) {
-        if (!pLevel.isClientSide) {
+        if (!pLevel.isClientSide()) {
             final Item item = itemStack.getItem();
             final ItemStack itemResult = new ItemStack(Items.WATER_BUCKET);
             pPlayer.setItemInHand(pHand, ItemUtils.createFilledResult(itemStack, pPlayer, itemResult));
@@ -32,7 +32,7 @@ public class DecorCauldronHelper {
     }
     
     public static void fillCauldron(Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack itemStack) {
-        if (!pLevel.isClientSide) {
+        if (!pLevel.isClientSide()) {
             final Item item = itemStack.getItem();
             pPlayer.setItemInHand(pHand, ItemUtils.createFilledResult(itemStack, pPlayer, new ItemStack(Items.BUCKET)));
             pPlayer.awardStat(Stats.FILL_CAULDRON);
