@@ -13,22 +13,24 @@ import net.minecraft.world.item.trading.MerchantOffer;
 
 public class RandomItemForEmeraldTradeOffer implements VillagerTrades.ItemListing {
     
+    private final int count;
     private final ItemCost itemCost;
     private final List<Item> listPossibleItems;
     private final int maxUses;
     private final int villagerXp;
     
-    public RandomItemForEmeraldTradeOffer(int pCost, int pMaxUses, int pVillagerXp, List<Item> pPossibleItems) {
+    public RandomItemForEmeraldTradeOffer(int pCount, int pMaxUses, int pVillagerXp, List<Item> pPossibleItems) {
         this.maxUses = pMaxUses;
         this.villagerXp = pVillagerXp;
-        this.itemCost = new ItemCost(Items.EMERALD, pCost);
+        this.itemCost = new ItemCost(Items.EMERALD, 1);
         this.listPossibleItems = pPossibleItems;
+        this.count = pCount;
     }
     
     @Override
     public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
         final int i = pRandom.nextInt(this.listPossibleItems.size());
-        final ItemStack itemStack = new ItemStack(this.listPossibleItems.get(i));
+        final ItemStack itemStack = new ItemStack(this.listPossibleItems.get(i), this.count);
         return new MerchantOffer(this.itemCost, itemStack, this.maxUses, this.villagerXp, 0.5f);
     }
     

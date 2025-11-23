@@ -40,7 +40,7 @@ Requires two blocks of stone (any type), one flower (any type), three wooden pla
     <td>8</td><td>4</td>
   </tr>
   <tr>
-    <td rowspan=3>2</td>
+    <td rowspan=4>2</td>
     <td>Item Frame</td><td>1</td>
     <td>Emerald</td><td>5</td>
     <td>12</td><td>6</td>
@@ -52,43 +52,58 @@ Requires two blocks of stone (any type), one flower (any type), three wooden pla
   </tr>
   <tr>
     <td>Bookshelf</td><td>1</td>
-    <td>Emerald</td><td>8</td>
+    <td>Emerald</td><td>7</td>
     <td>12</td><td>2</td>
   </tr>
   <tr>
-    <td rowspan=3>3</td>
+    <td>Decoration Chest Block</td><td>2</td>
+    <td>Emerald</td><td>1</td>
+    <td>6</td><td>4</td>
+  </tr>
+  <tr>
+    <td rowspan=4>3</td>
     <td>Decoration Cauldron</td><td>1</td>
     <td>Emerald</td><td>1</td>
     <td>6</td><td>4</td>
   </tr>
   <tr>
-    <td>Decoration Chest</td><td>2</td>
+    <td>Iron Chain</td><td>3</td>
     <td>Emerald</td><td>1</td>
-    <td>6</td><td>4</td>
+    <td>8</td><td>4</td>
   </tr>
   <tr>
-    <td>Any color blank Banner</td><td>1</td>
-    <td>Emerald</td><td>2</td>
-    <td>6</td><td>6</td>
+    <td>Any Copper Chain</td><td>2</td>
+    <td>Emerald</td><td>1</td>
+    <td>8</td><td>4</td>
   </tr>
   <tr>
-    <td rowspan=3>4</td>
-    <td>Decoration Box</td><td>3</td>
-    <td>Emerald</td><td>2</td>
+    <td>Any color blank Banner</td><td>6</td>
+    <td>Emerald</td><td>1</td>
+    <td>8</td><td>4</td>
+  </tr>
+  <tr>
+    <td rowspan=4>4</td>
+    <td>Decoration Box</td><td>2</td>
+    <td>Emerald</td><td>3</td>
     <td>8</td><td>6</td>
   </tr>
   <tr>
-    <td>Decoration Transport Box</td><td>3</td>
-    <td>Emerald</td><td>2</td>
+    <td>Decoration Transport Box</td><td>2</td>
+    <td>Emerald</td><td>3</td>
     <td>8</td><td>6</td>
   </tr>
   <tr>
-    <td>Decoration Rustic Box</td><td>3</td>
-    <td>Emerald</td><td>2</td>
+    <td>Decoration Rustic Box</td><td>2</td>
+    <td>Emerald</td><td>3</td>
     <td>8</td><td>6</td>
   </tr>
   <tr>
-    <td rowspan=2>5</td>
+    <td>Chiseled Bookshelf</td><td>1</td>
+    <td>Emerald</td><td>9</td>
+    <td>8</td><td>8</td>
+  </tr>
+  <tr>
+    <td rowspan=3>5</td>
     <td>Painting</td><td>3</td>
     <td>Emerald</td><td>2</td>
     <td>6</td><td>4</td>
@@ -96,6 +111,11 @@ Requires two blocks of stone (any type), one flower (any type), three wooden pla
   <tr>
     <td>Armor Stand</td><td>2</td>
     <td>Emerald</td><td>1</td>
+    <td>6</td><td>4</td>
+  </tr>
+  <tr>
+    <td>Decorated Pot</td><td>3</td>
+    <td>Emerald</td><td>2</td>
     <td>6</td><td>4</td>
   </tr>
 </table>

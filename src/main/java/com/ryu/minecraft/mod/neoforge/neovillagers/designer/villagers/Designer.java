@@ -28,6 +28,10 @@ public class Designer extends Worker {
     public static final String ENTITY_NAME = "designer";
     public static final String ENTITY_POI_NAME = "designer_poi";
     
+    private static final List<Item> RANDOM_COOPER_CHAINS = List.of(Items.COPPER_CHAIN.exposed(),
+            Items.COPPER_CHAIN.oxidized(), Items.COPPER_CHAIN.unaffected(), Items.COPPER_CHAIN.weathered(),
+            Items.COPPER_CHAIN.waxed(), Items.COPPER_CHAIN.waxedExposed(), Items.COPPER_CHAIN.waxedOxidized(),
+            Items.COPPER_CHAIN.waxedWeathered());
     private static final List<Item> RANDOM_ITEMS = List.of(Items.WHITE_BANNER, Items.BLACK_BANNER, Items.BLUE_BANNER,
             Items.BROWN_BANNER, Items.CYAN_BANNER, Items.GRAY_BANNER, Items.GREEN_BANNER, Items.LIGHT_BLUE_BANNER,
             Items.LIGHT_GRAY_BANNER, Items.LIME_BANNER, Items.MAGENTA_BANNER, Items.ORANGE_BANNER, Items.PINK_BANNER,
@@ -35,7 +39,7 @@ public class Designer extends Worker {
     private static final Map<ResourceKey<VillagerType>, Item> VILLAGE_PLANK_ITEMS = ImmutableMap
             .<ResourceKey<VillagerType>, Item> builder().put(VillagerType.PLAINS, Items.OAK_PLANKS)
             .put(VillagerType.TAIGA, Items.SPRUCE_PLANKS).put(VillagerType.SNOW, Items.SPRUCE_PLANKS)
-            .put(VillagerType.DESERT, Items.DEAD_BUSH).put(VillagerType.JUNGLE, Items.JUNGLE_PLANKS)
+            .put(VillagerType.DESERT, Items.PALE_OAK_PLANKS).put(VillagerType.JUNGLE, Items.JUNGLE_PLANKS)
             .put(VillagerType.SAVANNA, Items.ACACIA_PLANKS).put(VillagerType.SWAMP, Items.MANGROVE_PLANKS).build();
     
     public static VillagerProfession registerVillager() {
@@ -63,7 +67,7 @@ public class Designer extends Worker {
     protected ItemListing[] getLevel2() {
         final ItemListing option1 = new ItemForEmeraldTradeOffer(Items.ITEM_FRAME, 5, 1, 12, 6);
         final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.FLOWER_POT, 1, 3, 6, 4);
-        final ItemListing option3 = new ItemForEmeraldTradeOffer(Items.BOOKSHELF, 8, 1, 12, 2);
+        final ItemListing option3 = new ItemForEmeraldTradeOffer(Items.BOOKSHELF, 7, 1, 12, 2);
         final ItemListing option4 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_CHEST_BLOCK.get().asItem(), 1, 2, 6,
                 4);
         
@@ -75,9 +79,10 @@ public class Designer extends Worker {
         final ItemListing option1 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_CAULDRON_BLOCK.get().asItem(), 1, 1,
                 6, 4);
         final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.IRON_CHAIN, 1, 3, 8, 4);
-        final ItemListing option3 = new RandomItemForEmeraldTradeOffer(2, 6, 4, Designer.RANDOM_ITEMS);
+        final ItemListing option3 = new RandomItemForEmeraldTradeOffer(2, 8, 4, Designer.RANDOM_COOPER_CHAINS);
+        final ItemListing option4 = new RandomItemForEmeraldTradeOffer(6, 8, 4, Designer.RANDOM_ITEMS);
         
-        return new VillagerTrades.ItemListing[] { option1, option2, option3, };
+        return new VillagerTrades.ItemListing[] { option1, option2, option3, option4, };
     }
     
     @Override
@@ -88,8 +93,9 @@ public class Designer extends Worker {
                 8, 6);
         final ItemListing option3 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_BOX_FIX_BLOCK.get().asItem(), 3, 2,
                 8, 6);
+        final ItemListing option4 = new ItemForEmeraldTradeOffer(Items.CHISELED_BOOKSHELF, 9, 1, 8, 8);
         
-        return new VillagerTrades.ItemListing[] { option1, option2, option3, };
+        return new VillagerTrades.ItemListing[] { option1, option2, option3, option4, };
     }
     
     @Override
