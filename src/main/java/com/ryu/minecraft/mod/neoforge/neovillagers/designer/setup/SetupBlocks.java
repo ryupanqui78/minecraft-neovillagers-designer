@@ -48,7 +48,7 @@ public class SetupBlocks {
     
     private static <B extends Block> DeferredBlock<B> registerSingleBlock(String pName, Function<BlockBehaviour.Properties, ? extends B> func, float pStrength) {
         final DeferredBlock<B> block = SetupBlocks.BLOCKS.registerBlock(pName, func,
-                BlockBehaviour.Properties.of().strength(pStrength).requiresCorrectToolForDrops());
+                () -> BlockBehaviour.Properties.of().strength(pStrength).requiresCorrectToolForDrops());
         SetupBlocks.ITEMS.registerSimpleBlockItem(block);
         return block;
     }

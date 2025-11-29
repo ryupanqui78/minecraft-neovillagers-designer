@@ -1,4 +1,6 @@
-1.8.16-1.21.9
+1.9.17-1.21.10:
+  - Updating to Minecraft 1.21.10.
+1.8.17-1.21.9
   - Updating villager trades.
 1.8.16-1.21.9
  - Updating to Minecraft 1.21.9.
