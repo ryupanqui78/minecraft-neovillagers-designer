@@ -3,15 +3,16 @@ package com.ryu.minecraft.mod.neoforge.neovillagers.designer.villagers.trades;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.npc.VillagerDataHolder;
-import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.entity.npc.VillagerType;
+import net.minecraft.world.entity.npc.villager.VillagerDataHolder;
+import net.minecraft.world.entity.npc.villager.VillagerTrades;
+import net.minecraft.world.entity.npc.villager.VillagerType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -36,10 +37,9 @@ public class EmeraldForItemByVillagerTypeTradeOffer implements VillagerTrades.It
         this.villagerXp = pVillagerXp;
     }
     
-    @Nullable
     @Override
-    public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
-        if (pTrader instanceof final VillagerDataHolder villagerdataholder) {
+    public @Nullable MerchantOffer getOffer(ServerLevel level, Entity entity, RandomSource random) {
+        if (entity instanceof final VillagerDataHolder villagerdataholder) {
             final Optional<ResourceKey<VillagerType>> resourcekey = villagerdataholder.getVillagerData().type()
                     .unwrapKey();
             if (resourcekey.isPresent()) {

@@ -7,7 +7,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.item.crafting.Design
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.crafting.RecipeBookCategory;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -24,7 +24,7 @@ public class SetupRecipeType {
     
     public static final Supplier<RecipeType<DesignerRecipe>> DESIGNER = SetupRecipeType.RECIPE_TYPES
             .register(DesignerRecipe.RECIPE_NAME, () -> RecipeType.<DesignerRecipe> simple(
-                    ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, DesignerRecipe.RECIPE_NAME)));
+                    Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, DesignerRecipe.RECIPE_NAME)));
     
     private SetupRecipeType() {
         

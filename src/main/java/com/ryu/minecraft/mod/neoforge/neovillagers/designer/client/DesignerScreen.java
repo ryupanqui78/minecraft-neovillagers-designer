@@ -13,7 +13,7 @@ import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
@@ -31,7 +31,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
     private static final int SCROLLER_START_X = 116;
     private static final int SCROLLER_START_Y = 17;
     private static final int SCROLLER_WIDTH = 12;
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID,
+    private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID,
             "textures/gui/container/singlecontainer.png");
     
     private boolean scrolling;

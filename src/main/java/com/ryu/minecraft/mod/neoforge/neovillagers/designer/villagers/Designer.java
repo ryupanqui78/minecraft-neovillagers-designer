@@ -13,13 +13,13 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.villagers.trades.Ite
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.villagers.trades.RandomItemForEmeraldTradeOffer;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.npc.VillagerProfession;
-import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.entity.npc.VillagerTrades.ItemListing;
-import net.minecraft.world.entity.npc.VillagerType;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.entity.npc.villager.VillagerTrades;
+import net.minecraft.world.entity.npc.villager.VillagerTrades.ItemListing;
+import net.minecraft.world.entity.npc.villager.VillagerType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
@@ -43,7 +43,7 @@ public class Designer extends Worker {
             .put(VillagerType.SAVANNA, Items.ACACIA_PLANKS).put(VillagerType.SWAMP, Items.MANGROVE_PLANKS).build();
     
     public static VillagerProfession registerVillager() {
-        final ResourceLocation villagerResource = ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID,
+        final Identifier villagerResource = Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID,
                 Designer.ENTITY_NAME);
         final Component villager = Component
                 .translatable("entity." + villagerResource.getNamespace() + ".villager." + villagerResource.getPath());

@@ -2,9 +2,12 @@ package com.ryu.minecraft.mod.neoforge.neovillagers.designer.villagers.trades;
 
 import java.util.List;
 
+import org.jspecify.annotations.Nullable;
+
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -28,8 +31,8 @@ public class RandomItemForEmeraldTradeOffer implements VillagerTrades.ItemListin
     }
     
     @Override
-    public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
-        final int i = pRandom.nextInt(this.listPossibleItems.size());
+    public @Nullable MerchantOffer getOffer(ServerLevel level, Entity entity, RandomSource random) {
+        final int i = random.nextInt(this.listPossibleItems.size());
         final ItemStack itemStack = new ItemStack(this.listPossibleItems.get(i), this.count);
         return new MerchantOffer(this.itemCost, itemStack, this.maxUses, this.villagerXp, 0.5f);
     }

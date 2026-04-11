@@ -11,8 +11,8 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 
@@ -29,7 +29,7 @@ public record ClientboundDesignerRecipesPayload(List<RecipeHolder<DesignerRecipe
             ClientboundDesignerRecipesPayload::recipes, ClientboundDesignerRecipesPayload::new);
     
     public static final CustomPacketPayload.Type<ClientboundDesignerRecipesPayload> TYPE_PAYLOAD = new CustomPacketPayload.Type<>(
-            ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "designer_recipe"));
+            Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "designer_recipe"));
     
     @Override
     public Type<? extends CustomPacketPayload> type() {
