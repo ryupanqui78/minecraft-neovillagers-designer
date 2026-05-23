@@ -9,7 +9,6 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.network.server.Serve
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupBlocks;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupCreativeModTab;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupMenus;
-import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupRecipeSerializer;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupRecipeType;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupVillagers;
 
@@ -43,11 +42,12 @@ public class NeoVillagersDesigner {
         SetupMenus.MENUS.register(modEventBus);
         SetupVillagers.register(modEventBus);
         
-        NeoForge.EVENT_BUS.register(ServerDesignerRecipes.class);
         NeoForge.EVENT_BUS.addListener(ServerDesignerRecipes::onPlayerLoggedIn);
         
+        SetupRecipeType.RECIPE_DISPLAYS.register(modEventBus);
+        SetupRecipeType.RECIPE_BOOK_CATEGORIES.register(modEventBus);
         SetupRecipeType.RECIPE_TYPES.register(modEventBus);
-        SetupRecipeSerializer.REGISTER.register(modEventBus);
+        SetupRecipeType.RECIPE_SERIALIZERS.register(modEventBus);
         
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::registerPayloadHandlersEvent);

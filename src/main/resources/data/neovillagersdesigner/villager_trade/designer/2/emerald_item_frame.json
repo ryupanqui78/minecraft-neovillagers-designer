@@ -1,0 +1,14 @@
+{
+  "gives": {
+    "id": "minecraft:item_frame",
+    "count": 1
+  },
+  "max_uses": 16.0,
+  "reputation_discount": 0.05,
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 5
+  }
+  ,
+  "xp": 4.0
+}

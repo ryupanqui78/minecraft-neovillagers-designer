@@ -48,7 +48,7 @@ public class DesignerBlock extends Block {
     
     @Override
     public MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos) {
-        return new SimpleMenuProvider((pContainerId, playerInv, pAccess) -> new DesignerMenu(pContainerId, playerInv,
+        return new SimpleMenuProvider((pContainerId, playerInv, _) -> new DesignerMenu(pContainerId, playerInv,
                 ContainerLevelAccess.create(pLevel, pPos)), DesignerBlock.CONTAINER_TITLE);
     }
     

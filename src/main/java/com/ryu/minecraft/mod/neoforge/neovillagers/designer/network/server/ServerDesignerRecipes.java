@@ -13,6 +13,10 @@ public class ServerDesignerRecipes {
     
     private static ServerDesignerRecipeInputs inputs;
     
+    public static DesignerRecipeInputs inputs() {
+        return ServerDesignerRecipes.inputs;
+    }
+    
     @SubscribeEvent
     public static void onPlayerLoggedIn(PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof final ServerPlayer serverPlayer
@@ -22,10 +26,6 @@ public class ServerDesignerRecipes {
             ServerDesignerRecipes.inputs.syncToClient(List.of(serverPlayer).stream());
         }
         
-    }
-    
-    public static DesignerRecipeInputs inputs() {
-        return ServerDesignerRecipes.inputs;
     }
     
     private ServerDesignerRecipes() {
