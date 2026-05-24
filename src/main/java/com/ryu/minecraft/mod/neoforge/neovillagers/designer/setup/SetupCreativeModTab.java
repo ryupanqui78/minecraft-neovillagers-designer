@@ -19,8 +19,8 @@ public class SetupCreativeModTab {
             .register(SetupCreativeModTab.TAB_NAME_DECORATION,
                     () -> CreativeModeTab.builder()
                             .title(Component.translatable("itemGroup.neovillagersdesigner.decoration"))
-                            .icon(SetupBlocks.DECOR_BARREL_BLOCK::toStack).displayItems((_, output) -> {
-                                output.accept(SetupBlocks.DECOR_BARREL_BLOCK);
+                            .icon(SetupBlocks.DECOR_BOX_CROSS_BLOCK::toStack).displayItems((_, output) -> {
+                                SetupBlocks.LIST_DECOR_BARREL_BLOCKS.forEach(block -> output.accept(block));
                                 output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK);
                                 output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK);
                                 output.accept(SetupBlocks.DECOR_BOX_BLOCK);

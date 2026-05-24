@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " P "
+  ],
+  "key": {
+    "P": "minecraft:bamboo_slab",
+    "S": "minecraft:barrel"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_bamboo",
+    "count": 1
+  }
+}

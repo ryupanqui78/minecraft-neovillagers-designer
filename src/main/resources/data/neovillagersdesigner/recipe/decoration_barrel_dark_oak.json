@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " P "
+  ],
+  "key": {
+    "P": "minecraft:dark_oak_slab",
+    "S": "minecraft:barrel"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_dark_oak",
+    "count": 1
+  }
+}

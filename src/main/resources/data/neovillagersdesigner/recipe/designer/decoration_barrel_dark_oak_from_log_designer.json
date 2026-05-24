@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "barrel",
+  "ingredient": "minecraft:dark_oak_log",
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_dark_oak",
+    "count": 1
+  }
+}

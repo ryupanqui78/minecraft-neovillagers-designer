@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "x": 180,
+      "model": "neovillagersdesigner:block/barrels/decoration_barrel_mangrove"
+    },
+    "facing=east": {
+      "x": 90,
+      "y": 90,
+      "model": "neovillagersdesigner:block/barrels/decoration_barrel_mangrove"
+    },
+    "facing=north": {
+      "x": 90,
+      "model": "neovillagersdesigner:block/barrels/decoration_barrel_mangrove"
+    },
+    "facing=south": {
+      "x": 90,
+      "y": 180,
+      "model": "neovillagersdesigner:block/barrels/decoration_barrel_mangrove"
+    },
+    "facing=up": {
+      "model": "neovillagersdesigner:block/barrels/decoration_barrel_mangrove"
+    },
+    "facing=west": {
+      "x": 90,
+      "y": 270,
+      "model": "neovillagersdesigner:block/barrels/decoration_barrel_mangrove"
+    }
+  }
+}

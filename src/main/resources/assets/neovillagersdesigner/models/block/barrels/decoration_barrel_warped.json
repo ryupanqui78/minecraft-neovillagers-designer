@@ -1,0 +1,8 @@
+{
+  "parent": "neovillagersdesigner:block/barrel_base",
+  "textures": {
+    "top":"neovillagersdesigner:block/barrels/warped_barrel_top",
+    "bottom": "neovillagersdesigner:block/barrels/warped_barrel_bottom",
+    "side": "neovillagersdesigner:block/barrels/warped_barrel_side"
+	}
+}

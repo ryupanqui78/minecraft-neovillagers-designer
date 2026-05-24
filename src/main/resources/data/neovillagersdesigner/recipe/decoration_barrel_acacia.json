@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " P "
+  ],
+  "key": {
+    "P": "minecraft:acacia_slab",
+    "S": "minecraft:barrel"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_acacia",
+    "count": 1
+  }
+}
