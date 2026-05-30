@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "P"
+  ],
+  "key": {
+    "P": "minecraft:dark_oak_slab",
+    "S": "minecraft:composter"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_dark_oak",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "neovillagersdesigner:block/base_composter",
+  "textures": {
+    "top": "neovillagersdesigner:block/composter/pale_oak_composter_top",
+    "bottom": "neovillagersdesigner:block/composter/pale_oak_composter_bottom",
+    "side": "neovillagersdesigner:block/composter/pale_oak_composter_side"
+  }
+}

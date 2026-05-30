@@ -20,7 +20,6 @@ public class SetupBlocks {
     private static final String DECORATION_BOX_CROSS_BLOCK_NAME = "decoration_box_cross";
     private static final String DECORATION_BOX_FIX_BLOCK_NAME = "decoration_box_fix";
     private static final String DECORATION_BOX_BLOCK_NAME = "decoration_box";
-    private static final String DECORATION_COMPOSTER_BLOCK_NAME = "decoration_composter";
     
     private static final List<String> WOOD_TYPES = List.of("acacia", "bamboo", "birch", "cherry", "crimson", "dark_oak",
             "jungle", "mangrove", "oak", "pale_oak", "spruce", "warped");
@@ -45,14 +44,20 @@ public class SetupBlocks {
             .registerSingleBlock(DecorCauldronBlock.BLOCK_NAME, DecorCauldronBlock::new, 2.0f);
     public static final DeferredBlock<DecorChestBlock> DECOR_CHEST_BLOCK = SetupBlocks
             .registerSingleBlock(DecorChestBlock.BLOCK_NAME, DecorChestBlock::new, 1.2f);
-    public static final DeferredBlock<Block> DECOR_COMPOSTER_BLOCK = SetupBlocks
-            .registerSingleBlock(SetupBlocks.DECORATION_COMPOSTER_BLOCK_NAME, Block::new, 0.7f);
+    public static final List<DeferredBlock<Block>> LIST_DECOR_COMPOSTER_BLOCKS = SetupBlocks
+            .registerDecorCompostertBlocks();
     public static final DeferredBlock<DecorWaterCauldronBlock> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks
             .registerSingleBlock(DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new, 2.0f);
     
     private static List<DeferredBlock<DecorBarrelBlock>> registerDecorBarrelBlocks() {
         return SetupBlocks.WOOD_TYPES.stream().map(woodType -> SetupBlocks
                 .registerSingleBlock("decoration_barrel_" + woodType, DecorBarrelBlock::new, 1.5f)).toList();
+    }
+    
+    private static List<DeferredBlock<Block>> registerDecorCompostertBlocks() {
+        return SetupBlocks.WOOD_TYPES.stream()
+                .map(woodType -> SetupBlocks.registerSingleBlock("decoration_composter_" + woodType, Block::new, 1.0f))
+                .toList();
     }
     
     private static <B extends Block> DeferredBlock<B> registerSingleBlock(String pName, Function<BlockBehaviour.Properties, ? extends B> func, float pStrength) {

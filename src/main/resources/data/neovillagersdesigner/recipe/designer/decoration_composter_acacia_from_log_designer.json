@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": "minecraft:acacia_log",
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_acacia",
+    "count": 1
+  }
+}
