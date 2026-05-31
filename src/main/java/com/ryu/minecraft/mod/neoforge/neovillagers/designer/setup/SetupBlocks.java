@@ -42,8 +42,7 @@ public class SetupBlocks {
             .registerSingleBlock(SetupBlocks.DECORATION_BOX_BLOCK_NAME, Block::new, 0.8f);
     public static final DeferredBlock<DecorCauldronBlock> DECOR_CAULDRON_BLOCK = SetupBlocks
             .registerSingleBlock(DecorCauldronBlock.BLOCK_NAME, DecorCauldronBlock::new, 2.0f);
-    public static final DeferredBlock<DecorChestBlock> DECOR_CHEST_BLOCK = SetupBlocks
-            .registerSingleBlock(DecorChestBlock.BLOCK_NAME, DecorChestBlock::new, 1.2f);
+    public static final List<DeferredBlock<DecorChestBlock>> LIST_DECOR_CHEST_BLOCKS = registerDecorChestBlocks();
     public static final List<DeferredBlock<Block>> LIST_DECOR_COMPOSTER_BLOCKS = SetupBlocks
             .registerDecorCompostertBlocks();
     public static final DeferredBlock<DecorWaterCauldronBlock> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks
@@ -52,6 +51,12 @@ public class SetupBlocks {
     private static List<DeferredBlock<DecorBarrelBlock>> registerDecorBarrelBlocks() {
         return SetupBlocks.WOOD_TYPES.stream().map(woodType -> SetupBlocks
                 .registerSingleBlock("decoration_barrel_" + woodType, DecorBarrelBlock::new, 1.5f)).toList();
+    }
+    
+    private static List<DeferredBlock<DecorChestBlock>> registerDecorChestBlocks() {
+        return SetupBlocks.WOOD_TYPES.stream().map(
+                woodType -> SetupBlocks.registerSingleBlock("decoration_chest_" + woodType, DecorChestBlock::new, 1.2f))
+                .toList();
     }
     
     private static List<DeferredBlock<Block>> registerDecorCompostertBlocks() {

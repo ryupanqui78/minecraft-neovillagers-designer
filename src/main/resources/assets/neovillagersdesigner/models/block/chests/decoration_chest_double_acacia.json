@@ -1,0 +1,6 @@
+{
+  "parent": "neovillagersdesigner:block/base_double_chest",
+  "textures": {
+    "chest":"neovillagersdesigner:block/chests/acacia_chest_double"
+  }
+}

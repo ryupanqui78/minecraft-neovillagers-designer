@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_cherry"
+    },
+    "facing=east": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_cherry",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_cherry",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_cherry",
+      "y": 270
+    }
+  }
+}

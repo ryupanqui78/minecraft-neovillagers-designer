@@ -15,10 +15,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class DecorChestBlock extends Block {
     
-    public static final String BLOCK_NAME = "decoration_chest";
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
     
-    protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
+    private static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 14.0D, 14.0D, 14.0D);
     
     public DecorChestBlock(Properties properties) {
         super(properties);

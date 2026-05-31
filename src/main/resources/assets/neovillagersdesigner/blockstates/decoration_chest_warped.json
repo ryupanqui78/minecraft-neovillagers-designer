@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_warped"
+    },
+    "facing=east": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_warped",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_warped",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_warped",
+      "y": 270
+    }
+  }
+}

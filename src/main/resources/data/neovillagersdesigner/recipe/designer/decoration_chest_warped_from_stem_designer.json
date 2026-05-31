@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "chest",
+  "ingredient": "minecraft:warped_stem",
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_warped",
+    "count": 1
+  }
+}

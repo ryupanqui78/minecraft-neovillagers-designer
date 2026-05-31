@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_bamboo"
+    },
+    "facing=east": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_bamboo",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_bamboo",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_bamboo",
+      "y": 270
+    }
+  }
+}

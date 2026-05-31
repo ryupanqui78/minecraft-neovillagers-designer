@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "chest",
+  "ingredient": "minecraft:birch_log",
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_birch",
+    "count": 1
+  }
+}

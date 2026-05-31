@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "chest",
+  "ingredient": "minecraft:acacia_log",
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_acacia",
+    "count": 1
+  }
+}

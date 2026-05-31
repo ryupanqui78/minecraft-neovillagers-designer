@@ -1,9 +1,0 @@
-{
-  "type": "neovillagersdesigner:designer",
-  "group": "barrel",
-  "ingredient": "#minecraft:logs",
-  "result": {
-    "id": "neovillagersdesigner:decoration_chest",
-    "count": 1
-  }
-}

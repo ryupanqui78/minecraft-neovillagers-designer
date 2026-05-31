@@ -1,0 +1,9 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "chest",
+  "ingredient": "minecraft:crimson_stem",
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_crimson",
+    "count": 1
+  }
+}

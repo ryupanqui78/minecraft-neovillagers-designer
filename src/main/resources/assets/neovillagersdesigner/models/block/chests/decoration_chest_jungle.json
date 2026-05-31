@@ -1,0 +1,7 @@
+{
+  "parent": "neovillagersdesigner:block/base_chest",
+  "textures": {
+    "particle": "minecraft:block/jungle_planks",
+    "chest":"neovillagersdesigner:block/chests/jungle_chest"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_birch"
+    },
+    "facing=east": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_birch",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_birch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_birch",
+      "y": 270
+    }
+  }
+}
