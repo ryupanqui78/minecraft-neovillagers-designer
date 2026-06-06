@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "neovillagersdesigner:decoration_chest_dark_oak",
+    "neovillagersdesigner:decoration_chest_dark_oak"
+  ],
+  "result": {
+    "id": "neovillagersdesigner:decoration_double_chest_dark_oak",
+    "count": 1
+  }
+}

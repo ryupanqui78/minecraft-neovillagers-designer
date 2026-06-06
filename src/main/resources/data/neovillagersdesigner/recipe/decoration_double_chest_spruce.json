@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "neovillagersdesigner:decoration_chest_spruce",
+    "neovillagersdesigner:decoration_chest_spruce"
+  ],
+  "result": {
+    "id": "neovillagersdesigner:decoration_double_chest_spruce",
+    "count": 1
+  }
+}

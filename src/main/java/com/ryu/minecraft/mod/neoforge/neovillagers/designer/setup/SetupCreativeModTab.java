@@ -27,6 +27,7 @@ public class SetupCreativeModTab {
                                 output.accept(SetupBlocks.DECOR_CAULDRON_BLOCK);
                                 SetupBlocks.LIST_DECOR_CHEST_BLOCKS.forEach(output::accept);
                                 SetupBlocks.LIST_DECOR_COMPOSTER_BLOCKS.forEach(output::accept);
+                                SetupBlocks.LIST_DECOR_DOUBLE_CHEST_BLOCKS.forEach(output::accept);
                                 output.accept(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK);
                             }).build());
     

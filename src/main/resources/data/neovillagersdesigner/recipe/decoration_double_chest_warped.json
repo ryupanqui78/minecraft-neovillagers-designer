@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "neovillagersdesigner:decoration_chest_warped",
+    "neovillagersdesigner:decoration_chest_warped"
+  ],
+  "result": {
+    "id": "neovillagersdesigner:decoration_double_chest_warped",
+    "count": 1
+  }
+}

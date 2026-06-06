@@ -7,6 +7,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBlock;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorDoubleChestBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorWaterCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DesignerBlock;
 
@@ -45,6 +46,7 @@ public class SetupBlocks {
     public static final List<DeferredBlock<DecorChestBlock>> LIST_DECOR_CHEST_BLOCKS = registerDecorChestBlocks();
     public static final List<DeferredBlock<Block>> LIST_DECOR_COMPOSTER_BLOCKS = SetupBlocks
             .registerDecorCompostertBlocks();
+    public static final List<DeferredBlock<DecorDoubleChestBlock>> LIST_DECOR_DOUBLE_CHEST_BLOCKS = registerDecorDoubleChestBlocks();
     public static final DeferredBlock<DecorWaterCauldronBlock> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks
             .registerSingleBlock(DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new, 2.0f);
     
@@ -63,6 +65,11 @@ public class SetupBlocks {
         return SetupBlocks.WOOD_TYPES.stream()
                 .map(woodType -> SetupBlocks.registerSingleBlock("decoration_composter_" + woodType, Block::new, 1.0f))
                 .toList();
+    }
+    
+    private static List<DeferredBlock<DecorDoubleChestBlock>> registerDecorDoubleChestBlocks() {
+        return SetupBlocks.WOOD_TYPES.stream().map(woodType -> SetupBlocks
+                .registerSingleBlock("decoration_double_chest_" + woodType, DecorDoubleChestBlock::new, 1.5f)).toList();
     }
     
     private static <B extends Block> DeferredBlock<B> registerSingleBlock(String pName, Function<BlockBehaviour.Properties, ? extends B> func, float pStrength) {
