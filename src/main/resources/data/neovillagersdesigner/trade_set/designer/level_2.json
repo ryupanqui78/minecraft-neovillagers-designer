@@ -2,8 +2,12 @@
   "amount": 2,
   "trades": [
     "neovillagersdesigner:designer/2/emerald_bookshelf",
-    "neovillagersdesigner:designer/2/emerald_decoration_chest",
-    "neovillagersdesigner:designer/2/emerald_flower_pot",
+    "neovillagersdesigner:designer/2/emerald_decoration_composter_acacia",
+    "neovillagersdesigner:designer/2/emerald_decoration_composter_jungle",
+    "neovillagersdesigner:designer/2/emerald_decoration_composter_mangrove",
+    "neovillagersdesigner:designer/2/emerald_decoration_composter_oak",
+    "neovillagersdesigner:designer/2/emerald_decoration_composter_pale_oak",
+    "neovillagersdesigner:designer/2/emerald_decoration_composter_spruce",
     "neovillagersdesigner:designer/2/emerald_item_frame"
   ]
 }

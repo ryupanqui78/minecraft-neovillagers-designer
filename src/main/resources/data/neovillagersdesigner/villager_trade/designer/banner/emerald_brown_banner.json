@@ -1,14 +1,13 @@
 {
   "gives": {
-    "id": "neovillagersdesigner:decoration_barrel_oak",
-    "count": 3
+    "id": "minecraft:brown_banner",
+    "count": 1
   },
   "max_uses": 8.0,
   "reputation_discount": 0.05,
   "wants": {
     "id": "minecraft:emerald",
-    "count": 2
-  }
-  ,
+    "count": 6
+  },
   "xp": 4.0
 }

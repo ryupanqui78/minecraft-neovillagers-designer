@@ -1,7 +1,7 @@
 {
   "gives": {
-    "id": "minecraft:emerald",
-    "count": 1
+    "id": "neovillagersdesigner:decoration_composter_oak",
+    "count": 2
   },
   "max_uses": 8.0,
   "merchant_predicate": {
@@ -10,15 +10,15 @@
     "predicate": {
       "predicates": {
         "minecraft:villager/variant": [
-          "minecraft:jungle"
+          "minecraft:plains"
         ]
       }
     }
   },
   "reputation_discount": 0.05,
   "wants": {
-    "id": "minecraft:jungle_planks",
-    "count": 6
+    "id": "minecraft:emerald",
+    "count": 1
   },
   "xp": 4.0
 }

@@ -1,9 +1,24 @@
 {
   "amount": 2,
   "trades": [
-    "neovillagersdesigner:designer/4/emerald_chiseled_bookshelf",
     "neovillagersdesigner:designer/4/emerald_decoration_box_cross",
     "neovillagersdesigner:designer/4/emerald_decoration_box_fix",
-    "neovillagersdesigner:designer/4/emerald_decoration_box"
+    "neovillagersdesigner:designer/4/emerald_decoration_box",
+    "neovillagersdesigner:designer/banner/emerald_black_banner",
+    "neovillagersdesigner:designer/banner/emerald_blue_banner",
+    "neovillagersdesigner:designer/banner/emerald_brown_banner",
+    "neovillagersdesigner:designer/banner/emerald_cyan_banner",
+    "neovillagersdesigner:designer/banner/emerald_gray_banner",
+    "neovillagersdesigner:designer/banner/emerald_green_banner",
+    "neovillagersdesigner:designer/banner/emerald_light_blue_banner",
+    "neovillagersdesigner:designer/banner/emerald_light_gray_banner",
+    "neovillagersdesigner:designer/banner/emerald_lime_banner",
+    "neovillagersdesigner:designer/banner/emerald_magenta_banner",
+    "neovillagersdesigner:designer/banner/emerald_orange_banner",
+    "neovillagersdesigner:designer/banner/emerald_pink_banner",
+    "neovillagersdesigner:designer/banner/emerald_purple_banner",
+    "neovillagersdesigner:designer/banner/emerald_red_banner",
+    "neovillagersdesigner:designer/banner/emerald_white_banner",
+    "neovillagersdesigner:designer/banner/emerald_yellow_banner"
   ]
 }

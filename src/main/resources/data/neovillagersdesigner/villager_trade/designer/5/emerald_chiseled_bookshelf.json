@@ -1,14 +1,13 @@
 {
   "gives": {
-    "id": "minecraft:green_banner",
+    "id": "minecraft:chiseled_bookshelf",
     "count": 1
   },
   "max_uses": 8.0,
   "reputation_discount": 0.05,
   "wants": {
     "id": "minecraft:emerald",
-    "count": 6
-  }
-  ,
-  "xp": 4.0
+    "count": 9
+  },
+  "xp": 8.0
 }

@@ -1,24 +1,13 @@
 {
   "amount": 2,
   "trades": [
-    "neovillagersdesigner:designer/3/emerald_black_banner",
-    "neovillagersdesigner:designer/3/emerald_blue_banner",
-    "neovillagersdesigner:designer/3/emerald_brown_banner",
     "neovillagersdesigner:designer/3/emerald_copper_chain",
-    "neovillagersdesigner:designer/3/emerald_cyan_banner",
-    "neovillagersdesigner:designer/3/emerald_decoration_cauldron",
-    "neovillagersdesigner:designer/3/emerald_gray_banner",
-    "neovillagersdesigner:designer/3/emerald_green_banner",
-    "neovillagersdesigner:designer/3/emerald_iron_chain",
-    "neovillagersdesigner:designer/3/emerald_light_blue_banner",
-    "neovillagersdesigner:designer/3/emerald_light_gray_banner",
-    "neovillagersdesigner:designer/3/emerald_lime_banner",
-    "neovillagersdesigner:designer/3/emerald_magenta_banner",
-    "neovillagersdesigner:designer/3/emerald_orange_banner",
-    "neovillagersdesigner:designer/3/emerald_pink_banner",
-    "neovillagersdesigner:designer/3/emerald_purple_banner",
-    "neovillagersdesigner:designer/3/emerald_red_banner",
-    "neovillagersdesigner:designer/3/emerald_white_banner",
-    "neovillagersdesigner:designer/3/emerald_yellow_banner"
+    "neovillagersdesigner:designer/3/emerald_decoration_barrel_acacia",
+    "neovillagersdesigner:designer/3/emerald_decoration_barrel_jungle",
+    "neovillagersdesigner:designer/3/emerald_decoration_barrel_mangrove",
+    "neovillagersdesigner:designer/3/emerald_decoration_barrel_oak",
+    "neovillagersdesigner:designer/3/emerald_decoration_barrel_pale_oak",
+    "neovillagersdesigner:designer/3/emerald_decoration_barrel_spruce",
+    "neovillagersdesigner:designer/3/emerald_iron_chain"
   ]
 }

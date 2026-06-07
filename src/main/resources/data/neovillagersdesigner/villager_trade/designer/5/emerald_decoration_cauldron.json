@@ -1,14 +1,13 @@
 {
   "gives": {
-    "id": "neovillagersdesigner:decoration_chest_oak",
-    "count": 2
+    "id": "neovillagersdesigner:decoration_cauldron",
+    "count": 1
   },
   "max_uses": 6.0,
   "reputation_discount": 0.05,
   "wants": {
     "id": "minecraft:emerald",
     "count": 1
-  }
-  ,
+  },
   "xp": 4.0
 }
