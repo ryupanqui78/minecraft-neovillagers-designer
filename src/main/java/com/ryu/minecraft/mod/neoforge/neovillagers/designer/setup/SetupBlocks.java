@@ -11,6 +11,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorDoubleChe
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorWaterCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DesignerBlock;
 
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -77,6 +78,15 @@ public class SetupBlocks {
                 () -> BlockBehaviour.Properties.of().strength(pStrength).requiresCorrectToolForDrops());
         SetupBlocks.ITEMS.registerSimpleBlockItem(block);
         return block;
+    }
+    
+    static {
+        SetupBlocks.BLOCKS.addAlias(Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_barrel"),
+                Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_barrel_oak"));
+        SetupBlocks.BLOCKS.addAlias(Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_chest"),
+                Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_chest_oak"));
+        SetupBlocks.BLOCKS.addAlias(Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_composter"),
+                Identifier.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_composter_oak"));
     }
     
     private SetupBlocks() {

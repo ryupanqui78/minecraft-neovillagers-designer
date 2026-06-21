@@ -124,7 +124,7 @@ Requires two blocks of stone (any type), one flower (any type), three wooden pla
 > Based in the type of villager the wood type used will be: Plains → Oak, Taiga → Spruce, Snow → Spruce, Desert → Pale Oak, Jungle → Jungle, Savanna → Acacia, Swamp → Mangrove.
 
 ## New Blocks added for decoration
-These blocks can be crafted using standard crafting or directly using the Designer table.
+These blocks can be crafted using standard crafting or directly using the Designer table. In this new version old blocks where assigned to oak type to avoid loose those blocks.
 
 ### Decoration Barrel
 Decoration barrel is a block similar to the Barrel that can be used as decoration when a barrel is required. It does not serve as fisherman's job site block.

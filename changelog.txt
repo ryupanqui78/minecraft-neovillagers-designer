@@ -4,6 +4,7 @@
   - Adding decoration chests (simple) based on the type of wood.
   - Adding decoration chests (double) based on the type of wood.
   - Adding new decoration blocks into Designer´s tradding.
+  - Fixing compatibility with all decoration blocks.
 2.10.17-26.1:
   - Updating to Minecraft 26.1.
 1.10.17-1.21.11:
