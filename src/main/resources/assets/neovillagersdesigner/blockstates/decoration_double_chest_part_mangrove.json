@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_mangrove" },
+    "facing=east": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_mangrove" },
+    "facing=south": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_mangrove" },
+    "facing=west": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_mangrove" }
+  }
+}

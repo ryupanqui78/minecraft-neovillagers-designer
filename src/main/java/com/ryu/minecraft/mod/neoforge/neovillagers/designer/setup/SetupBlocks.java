@@ -8,6 +8,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlo
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorDoubleChestBlock;
+import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorDoubleChestPartBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorWaterCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DesignerBlock;
 
@@ -47,7 +48,18 @@ public class SetupBlocks {
     public static final List<DeferredBlock<DecorChestBlock>> LIST_DECOR_CHEST_BLOCKS = registerDecorChestBlocks();
     public static final List<DeferredBlock<Block>> LIST_DECOR_COMPOSTER_BLOCKS = SetupBlocks
             .registerDecorCompostertBlocks();
-    public static final List<DeferredBlock<DecorDoubleChestBlock>> LIST_DECOR_DOUBLE_CHEST_BLOCKS = registerDecorDoubleChestBlocks();
+    public static final List<DeferredBlock<DecorDoubleChestBlock>> LIST_DECOR_DOUBLE_CHEST_BLOCKS;
+    public static final List<DeferredBlock<DecorDoubleChestPartBlock>> LIST_DECOR_DOUBLE_CHEST_PART_BLOCKS;
+    
+    static {
+        // Register part blocks first so they can be referenced by the main blocks via a supplier.
+        LIST_DECOR_DOUBLE_CHEST_PART_BLOCKS = SetupBlocks.WOOD_TYPES.stream().map(woodType ->
+            SetupBlocks.BLOCKS.<DecorDoubleChestPartBlock>registerBlock(
+                "decoration_double_chest_part_" + woodType, DecorDoubleChestPartBlock::new,
+                () -> BlockBehaviour.Properties.of().strength(1.5f).requiresCorrectToolForDrops().noLootTable()))
+            .toList();
+        LIST_DECOR_DOUBLE_CHEST_BLOCKS = registerDecorDoubleChestBlocks();
+    }
     public static final DeferredBlock<DecorWaterCauldronBlock> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks
             .registerSingleBlock(DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new, 2.0f);
     
@@ -69,8 +81,16 @@ public class SetupBlocks {
     }
     
     private static List<DeferredBlock<DecorDoubleChestBlock>> registerDecorDoubleChestBlocks() {
-        return SetupBlocks.WOOD_TYPES.stream().map(woodType -> SetupBlocks
-                .registerSingleBlock("decoration_double_chest_" + woodType, DecorDoubleChestBlock::new, 1.5f)).toList();
+        return java.util.stream.IntStream.range(0, SetupBlocks.WOOD_TYPES.size()).mapToObj(i -> {
+            String woodType = SetupBlocks.WOOD_TYPES.get(i);
+            DeferredBlock<DecorDoubleChestPartBlock> partRef = SetupBlocks.LIST_DECOR_DOUBLE_CHEST_PART_BLOCKS.get(i);
+            final DeferredBlock<DecorDoubleChestBlock> block = SetupBlocks.BLOCKS.registerBlock(
+                    "decoration_double_chest_" + woodType,
+                    props -> new DecorDoubleChestBlock(partRef::get, props),
+                    () -> BlockBehaviour.Properties.of().strength(1.5f).requiresCorrectToolForDrops());
+            SetupBlocks.ITEMS.registerSimpleBlockItem(block);
+            return block;
+        }).toList();
     }
     
     private static <B extends Block> DeferredBlock<B> registerSingleBlock(String pName, Function<BlockBehaviour.Properties, ? extends B> func, float pStrength) {
