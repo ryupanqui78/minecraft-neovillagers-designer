@@ -44,16 +44,7 @@ public class DesignerMenu extends AbstractContainerMenu {
     private final ResultContainer resultContainer = new ResultContainer();
     private final Slot resultSlot;
     private final DataSlot selectedRecipeIndex = DataSlot.standalone();
-    
-    private ItemStack input = ItemStack.EMPTY;
-    private long lastSoundTime;
-    
-    protected List<RecipeHolder<DesignerRecipe>> recipesForInput = new ArrayList<>();
-    
-    Runnable slotUpdateListener = () -> {
-    };
-    
-    public final Container container = new SimpleContainer(1) {
+    private final Container container = new SimpleContainer(1) {
         {
             Objects.requireNonNull(DesignerMenu.this);
         }
@@ -64,6 +55,14 @@ public class DesignerMenu extends AbstractContainerMenu {
             DesignerMenu.this.slotsChanged(this);
             DesignerMenu.this.slotUpdateListener.run();
         }
+    };
+    
+    private ItemStack input = ItemStack.EMPTY;
+    private long lastSoundTime;
+    
+    private List<RecipeHolder<DesignerRecipe>> recipesForInput = new ArrayList<>();
+    
+    Runnable slotUpdateListener = () -> {
     };
     
     public DesignerMenu(int pContainerId, Inventory playerInv) {

@@ -27,8 +27,8 @@ public class SetupRecipeType {
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister
             .create(Registries.RECIPE_SERIALIZER, NeoVillagersDesigner.MODID);
     
-    public static final Supplier<RecipeDisplay.Type<SingleRecipeDisplay>> SINGLE_RECIPE_DISPLAY = SetupRecipeType.RECIPE_DISPLAYS
-            .register("single_recipe_diplay", () -> SingleRecipeDisplay.DISPLAY_TYPE);
+    private static final Supplier<RecipeDisplay.Type<SingleRecipeDisplay>> SINGLE_RECIPE_DISPLAY = SetupRecipeType.RECIPE_DISPLAYS
+            .register("single_recipe_display", () -> SingleRecipeDisplay.DISPLAY_TYPE);
     
     public static final Supplier<RecipeBookCategory> DESIGNER_CATEGORY = SetupRecipeType.RECIPE_BOOK_CATEGORIES
             .register(DesignerBlock.BLOCK_NAME, RecipeBookCategory::new);

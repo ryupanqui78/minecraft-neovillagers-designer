@@ -14,8 +14,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(value = NeoVillagersDesigner.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = NeoVillagersDesigner.MODID, value = Dist.CLIENT)
@@ -32,7 +30,6 @@ public class NeoVillagersDesignerClient {
     }
     
     public NeoVillagersDesignerClient(ModContainer container) {
-        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
     
 }

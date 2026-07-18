@@ -13,12 +13,9 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupRecipeTyp
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup.SetupVillagers;
 
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.crafting.ExtendedRecipeBookCategory;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.RegisterRecipeBookSearchCategoriesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -30,8 +27,7 @@ public class NeoVillagersDesigner {
     public static final String MODID = "neovillagersdesigner";
     public static final Logger LOGGER = LogUtils.getLogger();
     
-    public static final ExtendedRecipeBookCategory SEARCH_CATEGORY = new ExtendedRecipeBookCategory() {
-    };
+    private static final String PAYLOAD_VERSION = "1";
     
     public NeoVillagersDesigner(IEventBus modEventBus, ModContainer modContainer) {
         NeoVillagersDesigner.LOGGER.debug("Loading NeoVillagers Designer mod");
@@ -42,7 +38,7 @@ public class NeoVillagersDesigner {
         SetupMenus.MENUS.register(modEventBus);
         SetupVillagers.register(modEventBus);
         
-        NeoForge.EVENT_BUS.addListener(ServerDesignerRecipes::onPlayerLoggedIn);
+        NeoForge.EVENT_BUS.addListener(ServerDesignerRecipes::onDatapackSync);
         
         SetupRecipeType.RECIPE_DISPLAYS.register(modEventBus);
         SetupRecipeType.RECIPE_BOOK_CATEGORIES.register(modEventBus);
@@ -60,13 +56,8 @@ public class NeoVillagersDesigner {
     }
     
     public void registerPayloadHandlersEvent(final RegisterPayloadHandlersEvent event) {
-        final PayloadRegistrar registrar = event.registrar("1");
+        final PayloadRegistrar registrar = event.registrar(PAYLOAD_VERSION);
         registrar.playToClient(ClientboundDesignerRecipesPayload.TYPE_PAYLOAD,
                 ClientboundDesignerRecipesPayload.STREAM_CODEC, ClientDesignerRecipes::handle);
-    }
-    
-    @SubscribeEvent
-    public void registerSearchCategories(RegisterRecipeBookSearchCategoriesEvent event) {
-        event.register(NeoVillagersDesigner.SEARCH_CATEGORY, SetupRecipeType.DESIGNER_CATEGORY.get());
     }
 }

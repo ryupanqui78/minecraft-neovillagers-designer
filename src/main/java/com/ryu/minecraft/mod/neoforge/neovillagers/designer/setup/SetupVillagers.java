@@ -33,7 +33,7 @@ public class SetupVillagers {
             () -> SetupVillagers.createPoiType(SetupBlocks.DESIGNER));
     
     public static final DeferredHolder<VillagerProfession, VillagerProfession> DESIGNER = SetupVillagers
-            .createVillagerProfession("designer", SetupVillagers.DESIGNER_POI, SoundEvents.VILLAGER_CELEBRATE);
+            .createVillagerProfession("designer", SetupVillagers.DESIGNER_POI, SoundEvents.UI_STONECUTTER_SELECT_RECIPE);
     
     private static PoiType createPoiType(DeferredBlock<? extends Block> block) {
         return new PoiType(ImmutableSet.copyOf(block.get().getStateDefinition().getPossibleStates()), 1, 1);

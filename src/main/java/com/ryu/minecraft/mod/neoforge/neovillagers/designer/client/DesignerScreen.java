@@ -101,7 +101,7 @@ public class DesignerScreen extends AbstractContainerScreen<DesignerMenu> {
     }
     
     private boolean isScrollBarActive() {
-        return this.displayRecipes && (this.menu.getNumberOfVisibleRecipes() > DesignerScreen.SCROLLER_WIDTH);
+        return this.displayRecipes && (this.menu.getNumberOfVisibleRecipes() > DesignerScreen.RECIPES_COLUMNS * DesignerScreen.RECIPES_ROWS);
     }
     
     @Override

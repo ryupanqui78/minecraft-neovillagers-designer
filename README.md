@@ -1,19 +1,17 @@
-# Neo-Villagers - The designer
+# Neo-Villagers - The Designer
 
-This mod adds the designer villager that trades decoration items including the blocks added with this mod.
+This mod adds the Designer villager that trades decoration items including the blocks added with this mod.
 
 ## Workstation
 Designer table
 
 ### Feature
-The Designer table is used to craft items of decoration provided by this mod (Barrel, Chest, Box, Composter, Cauldron). It also serves as a Designer's job site block.
+The Designer table is used to craft decoration items provided by this mod (Barrel, Chest, Box, Composter, Cauldron). It also serves as the Designer's job site block.
 
-All of its recipes require just one ingredient to produce the block (in different quantities). It allows skipping steps and it is more efficient to craft the blocks. For example a log can directly turned into a Decoration Box; crafting normally this product requires multiple steps and spend more resources.The Designer table is used to craft items of decoration provided by this mod (Barrel, Chest, Box, Composter, Cauldron). It also serves as a Designer's job site block.
-
-All of its recipes require just one ingredient to produce the block (in different quantities). It allows skipping steps and it is more efficient to craft the blocks. For example a log can directly turned into a Decoration Box; crafting normally this product requires multiple steps and spend more resources.
+All of its recipes require just one ingredient to produce the block (in different quantities). It allows skipping steps and is more efficient than standard crafting. For example, a log can be directly turned into a Decoration Box; crafting it normally requires multiple steps and more resources.
 
 ### Crafting
-Requires two blocks of stone (any type), one flower (any type), three wooden plank and one iron ingot.
+Requires two blocks of stone (any type), one flower (any type), three wooden planks and one iron ingot.
 
 ## Trades
 <table>
@@ -121,13 +119,13 @@ Requires two blocks of stone (any type), one flower (any type), three wooden pla
 </table>
 
 > [!NOTE]
-> Based in the type of villager the wood type used will be: Plains → Oak, Taiga → Spruce, Snow → Spruce, Desert → Pale Oak, Jungle → Jungle, Savanna → Acacia, Swamp → Mangrove.
+> Based on the type of villager, the wood type used will be: Plains → Oak, Taiga → Spruce, Snow → Spruce, Desert → Pale Oak, Jungle → Jungle, Savanna → Acacia, Swamp → Mangrove.
 
 ## New Blocks added for decoration
-These blocks can be crafted using standard crafting or directly using the Designer table. In this new version old blocks where assigned to oak type to avoid loose those blocks.
+These blocks can be crafted using standard crafting or directly using the Designer table. In this new version, old blocks were assigned to the Oak type to avoid losing those blocks.
 
 ### Decoration Barrel
-Decoration barrel is a block similar to the Barrel that can be used as decoration when a barrel is required. It does not serve as fisherman's job site block.
+The Decoration Barrel is a block similar to the Barrel that can be used as decoration when a barrel is required. It does not serve as a fisherman's job site block.
 
 Available in the following wood variants: Oak, Birch, Spruce, Dark Oak, Acacia, Jungle, Cherry, Mangrove, Pale Oak, Bamboo, Crimson and Warped.
 
@@ -138,7 +136,7 @@ Requires a normal barrel placed above the matching wood type slab (e.g. Oak barr
 Place one log (or stem) of the desired wood type to obtain one Decoration Barrel of that type.
 
 ### Decoration Chest
-Decoration chest is a block similar to the Chest that can be used as decoration when a single chest is required.
+The Decoration Chest is a block similar to the Chest that can be used as decoration when a single chest is required.
 
 Available in the following wood variants: Oak, Birch, Spruce, Dark Oak, Acacia, Jungle, Cherry, Mangrove, Pale Oak, Bamboo, Crimson and Warped.
 
@@ -149,7 +147,7 @@ Requires a normal chest placed above the matching wood type slab (e.g. Oak chest
 Place one log (or stem) of the desired wood type to obtain one Decoration Chest of that type.
 
 ### Decoration Double Chest
-Decoration double chest is a block similar to the double Chest that can be used as decoration when a double chest is required.
+The Decoration Double Chest is a block similar to the double Chest that can be used as decoration when a double chest is required. It is not craftable at the Designer table.
 
 Available in the same wood variants as the Decoration Chest: Oak, Birch, Spruce, Dark Oak, Acacia, Jungle, Cherry, Mangrove, Pale Oak, Bamboo, Crimson and Warped.
 
@@ -157,7 +155,7 @@ Available in the same wood variants as the Decoration Chest: Oak, Birch, Spruce,
 Requires two Decoration Chests of the same wood type.
 
 ### Decoration Box
-Decoration box is a block similar to the Note block that can be used as decoration to represent a box without the features of the note block.
+The Decoration Box is a block similar to the Note Block that can be used as decoration to represent a box, without the note-playing features.
 
 #### Crafting
 Requires a note block placed above any wooden slab.
@@ -166,7 +164,7 @@ Requires a note block placed above any wooden slab.
 Place any log to obtain one Decoration Box.
 
 ### Decoration Box Cross
-Decoration box cross is a block similar to the Note block that can be used as decoration to represent a box. It has a different design than the normal Decoration Box, featuring a cross pattern.
+The Decoration Box Cross is a block similar to the Note Block that can be used as decoration to represent a box. It has a different design than the normal Decoration Box, featuring a cross pattern.
 
 #### Crafting
 Requires a note block in the center with wooden slabs placed diagonally (top-left and bottom-right corners).
@@ -175,7 +173,7 @@ Requires a note block in the center with wooden slabs placed diagonally (top-lef
 Place any log to obtain one Decoration Box Cross.
 
 ### Decoration Box Fix
-Decoration box fix is a block similar to the Note block that can be used as decoration to represent a box. It has a different design than the normal Decoration Box.
+The Decoration Box Fix is a block similar to the Note Block that can be used as decoration to represent a box. It has a different design than the normal Decoration Box.
 
 #### Crafting
 Requires a wooden slab placed to the left of a note block (side by side in a row).
@@ -184,7 +182,7 @@ Requires a wooden slab placed to the left of a note block (side by side in a row
 Place any log to obtain one Decoration Box Fix.
 
 ### Decoration Composter
-Decoration composter is a block similar to the Composter that can be used as decoration to represent a big flowerpot, it looks as it has filled of potting soil. It does not serve as farmer's job site block.
+The Decoration Composter is a block similar to the Composter that can be used as decoration to represent a large flower pot filled with potting soil. It does not serve as a farmer's job site block.
 
 Available in the following wood variants: Oak, Birch, Spruce, Dark Oak, Acacia, Jungle, Cherry, Mangrove, Pale Oak, Bamboo, Crimson and Warped.
 
@@ -195,10 +193,13 @@ Requires a normal composter placed above the matching wood type slab (e.g. Oak c
 Place one log (or stem) of the desired wood type to obtain one Decoration Composter of that type.
 
 ### Decoration Cauldron
-Decoration cauldron is a block similar to the Cauldron that can be used as decoration when a single cauldron is required. It does not serve as leatherworker's job site block. It supports filling with water using a water bucket, and getting the water using an empty bucket.
+The Decoration Cauldron is a block similar to the Cauldron that can be used as decoration. It does not serve as a leatherworker's job site block. It can be filled with water using a water bucket, which turns it into a Decoration Water Cauldron.
 
 #### Crafting
 Requires a normal cauldron flanked by one iron ingot on each side (three items in a row: iron ingot, cauldron, iron ingot).
 
 #### Crafting via Designer table
 Place one iron block to obtain two Decoration Cauldrons.
+
+### Decoration Water Cauldron
+The Decoration Water Cauldron is the water-filled state of the Decoration Cauldron. It can be emptied back into a bucket by using an empty bucket on it, which returns a Decoration Cauldron.

@@ -20,6 +20,7 @@ public class SetupCreativeModTab {
                     () -> CreativeModeTab.builder()
                             .title(Component.translatable("itemGroup.neovillagersdesigner.decoration"))
                             .icon(SetupBlocks.DECOR_BOX_CROSS_BLOCK::toStack).displayItems((_, output) -> {
+                                output.accept(SetupBlocks.DESIGNER);
                                 SetupBlocks.LIST_DECOR_BARREL_BLOCKS.forEach(output::accept);
                                 output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK);
                                 output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK);

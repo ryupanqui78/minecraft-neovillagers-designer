@@ -28,7 +28,7 @@ public class ServerDesignerRecipeInputs implements DesignerRecipeInputs {
     
     public void loadRecipes() {
         final MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-        if (server != null) { // Should never be null
+        if (server != null && this.recipeManager != null) { // Should never be null
             this.recipes = new ArrayList<>();
             this.recipeManager.recipeMap().byType(SetupRecipeType.DESIGNER.get())
                     .forEach(element -> this.recipes.add(element));
