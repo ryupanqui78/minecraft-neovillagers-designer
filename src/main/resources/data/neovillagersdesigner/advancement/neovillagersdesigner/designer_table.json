@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "neovillagersdesigner:designer"
+    },
+    "title": {
+      "translate": "advancement.neovillagersdesigner.designer_table.title"
+    },
+    "description": {
+      "translate": "advancement.neovillagersdesigner.designer_table.description"
+    },
+    "frame": "task",
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_designer_table": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "neovillagersdesigner:designer"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_designer_table"
+    ]
+  ]
+}

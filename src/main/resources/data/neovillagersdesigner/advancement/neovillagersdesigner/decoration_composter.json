@@ -1,0 +1,48 @@
+{
+  "parent": "neovillagersdesigner:neovillagersdesigner/designer_table",
+  "display": {
+    "icon": {
+      "id": "neovillagersdesigner:decoration_composter_oak"
+    },
+    "title": {
+      "translate": "advancement.neovillagersdesigner.decoration_composter.title"
+    },
+    "description": {
+      "translate": "advancement.neovillagersdesigner.decoration_composter.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "has_decoration_composter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "neovillagersdesigner:decoration_composter_acacia",
+              "neovillagersdesigner:decoration_composter_bamboo",
+              "neovillagersdesigner:decoration_composter_birch",
+              "neovillagersdesigner:decoration_composter_cherry",
+              "neovillagersdesigner:decoration_composter_crimson",
+              "neovillagersdesigner:decoration_composter_dark_oak",
+              "neovillagersdesigner:decoration_composter_jungle",
+              "neovillagersdesigner:decoration_composter_mangrove",
+              "neovillagersdesigner:decoration_composter_oak",
+              "neovillagersdesigner:decoration_composter_pale_oak",
+              "neovillagersdesigner:decoration_composter_spruce",
+              "neovillagersdesigner:decoration_composter_warped"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_decoration_composter"
+    ]
+  ]
+}

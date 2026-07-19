@@ -1,0 +1,48 @@
+{
+  "parent": "neovillagersdesigner:neovillagersdesigner/designer_table",
+  "display": {
+    "icon": {
+      "id": "neovillagersdesigner:decoration_barrel_oak"
+    },
+    "title": {
+      "translate": "advancement.neovillagersdesigner.decoration_barrel.title"
+    },
+    "description": {
+      "translate": "advancement.neovillagersdesigner.decoration_barrel.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "has_decoration_barrel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "neovillagersdesigner:decoration_barrel_acacia",
+              "neovillagersdesigner:decoration_barrel_bamboo",
+              "neovillagersdesigner:decoration_barrel_birch",
+              "neovillagersdesigner:decoration_barrel_cherry",
+              "neovillagersdesigner:decoration_barrel_crimson",
+              "neovillagersdesigner:decoration_barrel_dark_oak",
+              "neovillagersdesigner:decoration_barrel_jungle",
+              "neovillagersdesigner:decoration_barrel_mangrove",
+              "neovillagersdesigner:decoration_barrel_oak",
+              "neovillagersdesigner:decoration_barrel_pale_oak",
+              "neovillagersdesigner:decoration_barrel_spruce",
+              "neovillagersdesigner:decoration_barrel_warped"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_decoration_barrel"
+    ]
+  ]
+}

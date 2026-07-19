@@ -1,0 +1,35 @@
+{
+  "parent": "neovillagersdesigner:neovillagersdesigner/designer_table",
+  "display": {
+    "icon": {
+      "id": "neovillagersdesigner:decoration_box"
+    },
+    "title": {
+      "translate": "advancement.neovillagersdesigner.decoration_box.title"
+    },
+    "description": {
+      "translate": "advancement.neovillagersdesigner.decoration_box.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "has_decoration_box": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "neovillagersdesigner:decoration_box"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_decoration_box"
+    ]
+  ]
+}

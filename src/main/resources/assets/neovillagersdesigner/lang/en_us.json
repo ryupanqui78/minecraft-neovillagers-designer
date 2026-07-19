@@ -58,5 +58,35 @@
   
   "itemGroup.neovillagersdesigner.decoration": "Decoration Blocks",
   
-  "screen.container.designer": "Designer table"
+  "screen.container.designer": "Designer table",
+
+  "advancement.neovillagersdesigner.designer_table.title": "The Designer",
+  "advancement.neovillagersdesigner.designer_table.description": "Obtain a Designer table to start crafting decoration blocks.",
+
+  "advancement.neovillagersdesigner.decoration_barrel.title": "Rolling Stock",
+  "advancement.neovillagersdesigner.decoration_barrel.description": "Obtain a Decoration Barrel.",
+
+  "advancement.neovillagersdesigner.decoration_chest.title": "Chest of Wonders",
+  "advancement.neovillagersdesigner.decoration_chest.description": "Obtain a Decoration Chest.",
+
+  "advancement.neovillagersdesigner.decoration_double_chest.title": "Double the Space",
+  "advancement.neovillagersdesigner.decoration_double_chest.description": "Combine two Decoration Chests into a Decoration Double Chest.",
+
+  "advancement.neovillagersdesigner.decoration_composter.title": "Green Thumb",
+  "advancement.neovillagersdesigner.decoration_composter.description": "Obtain a Decoration Composter.",
+
+  "advancement.neovillagersdesigner.decoration_box.title": "Packed and Ready",
+  "advancement.neovillagersdesigner.decoration_box.description": "Obtain a Decoration Box.",
+
+  "advancement.neovillagersdesigner.decoration_box_cross.title": "Handle with Care",
+  "advancement.neovillagersdesigner.decoration_box_cross.description": "Obtain a Decoration Box Cross.",
+
+  "advancement.neovillagersdesigner.decoration_box_fix.title": "Rustic Charm",
+  "advancement.neovillagersdesigner.decoration_box_fix.description": "Obtain a Decoration Box Fix.",
+
+  "advancement.neovillagersdesigner.decoration_cauldron.title": "Cauldron Keeper",
+  "advancement.neovillagersdesigner.decoration_cauldron.description": "Obtain a Decoration Cauldron.",
+
+  "advancement.neovillagersdesigner.decoration_water_cauldron.title": "Fill It Up",
+  "advancement.neovillagersdesigner.decoration_water_cauldron.description": "Fill a Decoration Cauldron with water."
 }
