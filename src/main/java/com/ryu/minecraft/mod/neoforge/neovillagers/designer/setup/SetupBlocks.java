@@ -1,5 +1,8 @@
 package com.ryu.minecraft.mod.neoforge.neovillagers.designer.setup;
 
+import java.util.List;
+import java.util.function.Function;
+
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.NeoVillagersDesigner;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorBarrelBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorCauldronBlock;
@@ -7,6 +10,7 @@ import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorChestBloc
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DecorWaterCauldronBlock;
 import com.ryu.minecraft.mod.neoforge.neovillagers.designer.block.DesignerBlock;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,6 +23,10 @@ public class SetupBlocks {
     private static final String DECORATION_BOX_CROSS_BLOCK_NAME = "decoration_box_cross";
     private static final String DECORATION_BOX_FIX_BLOCK_NAME = "decoration_box_fix";
     private static final String DECORATION_BOX_BLOCK_NAME = "decoration_box";
+    
+    private static final List<String> WOOD_TYPES = List.of("acacia", "bamboo", "birch", "cherry", "crimson", "dark_oak",
+            "jungle", "mangrove", "oak", "spruce", "warped");
+    
     private static final String DECORATION_COMPOSTER_BLOCK_NAME = "decoration_composter";
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoVillagersDesigner.MODID);
@@ -33,9 +41,8 @@ public class SetupBlocks {
             .registerSimpleBlockItem(SetupBlocks.DESIGNER);
     
     // Register Single blocks
-    public static final DeferredBlock<DecorBarrelBlock> DECOR_BARREL_BLOCK = SetupBlocks.BLOCKS.registerBlock(
-            DecorBarrelBlock.BLOCK_NAME, DecorBarrelBlock::new,
-            BlockBehaviour.Properties.of().strength(1.5f).requiresCorrectToolForDrops());
+    public static final List<DeferredBlock<DecorBarrelBlock>> LIST_DECOR_BARREL_BLOCKS = SetupBlocks
+            .registerDecorBarrelBlocks();
     public static final DeferredBlock<Block> DECOR_BOX_CROSS_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_CROSS_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
@@ -58,8 +65,6 @@ public class SetupBlocks {
             .registerBlock(DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new,
                     BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
     // Register Single block Items
-    public static final DeferredItem<BlockItem> DECOR_BARREL_BLOCK_ITEM = SetupBlocks.ITEMS
-            .registerSimpleBlockItem(SetupBlocks.DECOR_BARREL_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_CROSS_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_CROSS_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_BOX_FIX_BLOCK_ITEM = SetupBlocks.ITEMS
@@ -74,6 +79,24 @@ public class SetupBlocks {
             .registerSimpleBlockItem(SetupBlocks.DECOR_COMPOSTER_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_WATER_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK);
+    
+    static {
+        SetupBlocks.BLOCKS.addAlias(
+                ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_barrel"),
+                ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_barrel_oak"));
+    }
+    
+    private static List<DeferredBlock<DecorBarrelBlock>> registerDecorBarrelBlocks() {
+        return SetupBlocks.WOOD_TYPES.stream().map(woodType -> SetupBlocks
+                .registerSingleBlock("decoration_barrel_" + woodType, DecorBarrelBlock::new, 1.5f)).toList();
+    }
+    
+    private static <B extends Block> DeferredBlock<B> registerSingleBlock(String pName, Function<BlockBehaviour.Properties, ? extends B> func, float pStrength) {
+        final DeferredBlock<B> block = SetupBlocks.BLOCKS.registerBlock(pName, func,
+                BlockBehaviour.Properties.of().strength(pStrength).requiresCorrectToolForDrops());
+        SetupBlocks.ITEMS.registerSimpleBlockItem(block);
+        return block;
+    }
     
     private SetupBlocks() {
     }

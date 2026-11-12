@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "barrel",
+  "ingredient": {
+    "item": "minecraft:bamboo_block"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_bamboo",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "barrel",
+  "ingredient": {
+    "item": "minecraft:crimson_stem"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_crimson",
+    "count": 1
+  }
+}

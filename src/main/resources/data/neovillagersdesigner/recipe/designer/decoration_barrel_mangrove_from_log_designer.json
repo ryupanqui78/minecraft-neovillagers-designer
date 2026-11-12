@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "barrel",
+  "ingredient": {
+    "item": "minecraft:mangrove_log"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_barrel_mangrove",
+    "count": 1
+  }
+}
