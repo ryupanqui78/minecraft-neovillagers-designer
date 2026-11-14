@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "chest",
+  "ingredient": {
+    "item": "minecraft:dark_oak_log"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_dark_oak",
+    "count": 1
+  }
+}

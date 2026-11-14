@@ -43,6 +43,8 @@ public class SetupBlocks {
     // Register Single blocks
     public static final List<DeferredBlock<DecorBarrelBlock>> LIST_DECOR_BARREL_BLOCKS = SetupBlocks
             .registerDecorBarrelBlocks();
+    public static final List<DeferredBlock<DecorChestBlock>> LIST_DECOR_CHEST_BLOCKS = SetupBlocks
+            .registerDecorChestBlocks();
     public static final DeferredBlock<Block> DECOR_BOX_CROSS_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_CROSS_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
@@ -52,9 +54,6 @@ public class SetupBlocks {
     public static final DeferredBlock<Block> DECOR_BOX_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
-    public static final DeferredBlock<Block> DECOR_CHEST_BLOCK = SetupBlocks.BLOCKS.registerBlock(
-            DecorChestBlock.BLOCK_NAME, DecorChestBlock::new,
-            BlockBehaviour.Properties.of().strength(0.7f).requiresCorrectToolForDrops());
     public static final DeferredBlock<DecorCauldronBlock> DECOR_CAULDRON_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             DecorCauldronBlock.BLOCK_NAME, DecorCauldronBlock::new,
             BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
@@ -73,8 +72,6 @@ public class SetupBlocks {
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_CAULDRON_BLOCK);
-    public static final DeferredItem<BlockItem> DECOR_CHEST_BLOCK_ITEM = SetupBlocks.ITEMS
-            .registerSimpleBlockItem(SetupBlocks.DECOR_CHEST_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_COMPOSTER_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_COMPOSTER_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_WATER_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
@@ -84,11 +81,20 @@ public class SetupBlocks {
         SetupBlocks.BLOCKS.addAlias(
                 ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_barrel"),
                 ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_barrel_oak"));
+        SetupBlocks.BLOCKS.addAlias(
+                ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_chest"),
+                ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_chest_oak"));
     }
     
     private static List<DeferredBlock<DecorBarrelBlock>> registerDecorBarrelBlocks() {
         return SetupBlocks.WOOD_TYPES.stream().map(woodType -> SetupBlocks
                 .registerSingleBlock("decoration_barrel_" + woodType, DecorBarrelBlock::new, 1.5f)).toList();
+    }
+    
+    private static List<DeferredBlock<DecorChestBlock>> registerDecorChestBlocks() {
+        return SetupBlocks.WOOD_TYPES.stream().map(
+                woodType -> SetupBlocks.registerSingleBlock("decoration_chest_" + woodType, DecorChestBlock::new, 1.2f))
+                .toList();
     }
     
     private static <B extends Block> DeferredBlock<B> registerSingleBlock(String pName, Function<BlockBehaviour.Properties, ? extends B> func, float pStrength) {

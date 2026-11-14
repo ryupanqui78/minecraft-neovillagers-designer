@@ -22,11 +22,11 @@ public class SetupCreativeModTab {
                             .icon(() -> SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get().getDefaultInstance())
                             .displayItems((parameters, output) -> {
                                 SetupBlocks.LIST_DECOR_BARREL_BLOCKS.forEach(output::accept);
+                                SetupBlocks.LIST_DECOR_CHEST_BLOCKS.forEach(output::accept);
                                 output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_CAULDRON_BLOCK_ITEM.get());
-                                output.accept(SetupBlocks.DECOR_CHEST_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_COMPOSTER_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK_ITEM.get());
                             }).build());

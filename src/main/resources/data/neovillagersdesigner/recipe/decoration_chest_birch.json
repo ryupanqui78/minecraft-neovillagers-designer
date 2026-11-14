@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " P "
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:birch_slab"
+    },
+    "S": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_birch",
+    "count": 1
+  }
+}

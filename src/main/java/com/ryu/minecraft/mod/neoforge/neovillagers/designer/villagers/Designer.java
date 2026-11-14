@@ -26,18 +26,19 @@ public class Designer extends Worker {
     
     private static final Map<String, Item> BARRELS = SetupBlocks.LIST_DECOR_BARREL_BLOCKS.stream().collect(
             Collectors.toMap(block -> BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), block -> block.asItem()));
+    private static final Map<String, Item> CHESTS = SetupBlocks.LIST_DECOR_CHEST_BLOCKS.stream().collect(
+            Collectors.toMap(block -> BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), block -> block.asItem()));
     
     @Override
     protected ItemListing[] getLevel1() {
         final ItemListing option1 = new ItemForEmeraldVillagerType(2, 3, 8, 4,
-                ImmutableMap.<VillagerType, Item> builder()
-                        .put(VillagerType.PLAINS, BARRELS.get("decoration_barrel_oak"))
-                        .put(VillagerType.TAIGA, BARRELS.get("decoration_barrel_spruce"))
-                        .put(VillagerType.SNOW, BARRELS.get("decoration_barrel_spruce"))
-                        .put(VillagerType.DESERT, BARRELS.get("decoration_barrel_oak"))
-                        .put(VillagerType.JUNGLE, BARRELS.get("decoration_barrel_jungle"))
-                        .put(VillagerType.SAVANNA, BARRELS.get("decoration_barrel_acacia"))
-                        .put(VillagerType.SWAMP, BARRELS.get("decoration_barrel_mangrove")).build());
+                ImmutableMap.<VillagerType, Item> builder().put(VillagerType.PLAINS, CHESTS.get("decoration_chest_oak"))
+                        .put(VillagerType.TAIGA, CHESTS.get("decoration_chest_spruce"))
+                        .put(VillagerType.SNOW, CHESTS.get("decoration_chest_spruce"))
+                        .put(VillagerType.DESERT, CHESTS.get("decoration_chest_oak"))
+                        .put(VillagerType.JUNGLE, CHESTS.get("decoration_chest_jungle"))
+                        .put(VillagerType.SAVANNA, CHESTS.get("decoration_chest_acacia"))
+                        .put(VillagerType.SWAMP, CHESTS.get("decoration_chest_mangrove")).build());
         final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.FLOWER_POT, 1, 3, 6, 4);
         final ItemListing option3 = new EmeraldForItemVillagerType(6, 8, 4,
                 ImmutableMap.<VillagerType, Item> builder().put(VillagerType.PLAINS, Items.OAK_PLANKS)
@@ -78,11 +79,17 @@ public class Designer extends Worker {
         listItems.add(Items.PURPLE_BANNER);
         listItems.add(Items.RED_BANNER);
         listItems.add(Items.YELLOW_BANNER);
-        final ItemListing option1 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_CAULDRON_BLOCK.get().asItem(), 1, 1,
-                6, 4);
-        final ItemListing option2 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_CHEST_BLOCK.get().asItem(), 1, 2, 6,
-                4);
-        final ItemListing option3 = new RandomItemForEmeraldTradeOffer(2, 6, 4, listItems);
+        final ItemListing option1 = new ItemForEmeraldVillagerType(2, 3, 8, 4,
+                ImmutableMap.<VillagerType, Item> builder()
+                        .put(VillagerType.PLAINS, BARRELS.get("decoration_barrel_oak"))
+                        .put(VillagerType.TAIGA, BARRELS.get("decoration_barrel_spruce"))
+                        .put(VillagerType.SNOW, BARRELS.get("decoration_barrel_spruce"))
+                        .put(VillagerType.DESERT, BARRELS.get("decoration_barrel_oak"))
+                        .put(VillagerType.JUNGLE, BARRELS.get("decoration_barrel_jungle"))
+                        .put(VillagerType.SAVANNA, BARRELS.get("decoration_barrel_acacia"))
+                        .put(VillagerType.SWAMP, BARRELS.get("decoration_barrel_mangrove")).build());
+        final ItemListing option2 = new RandomItemForEmeraldTradeOffer(2, 6, 4, listItems);
+        final ItemListing option3 = new ItemForEmeraldTradeOffer(Items.CHAIN, 1, 1, 8, 4);
         
         return new VillagerTrades.ItemListing[] { option1, option2, option3, };
     }
@@ -101,10 +108,12 @@ public class Designer extends Worker {
     
     @Override
     protected ItemListing[] getLevel5() {
-        final ItemListing option1 = new ItemForEmeraldTradeOffer(Items.PAINTING, 2, 3, 6, 4);
-        final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.ARMOR_STAND, 1, 2, 6, 4);
+        final ItemListing option1 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_CAULDRON_BLOCK.get().asItem(), 1, 1,
+                6, 4);
+        final ItemListing option2 = new ItemForEmeraldTradeOffer(Items.PAINTING, 2, 3, 6, 4);
+        final ItemListing option3 = new ItemForEmeraldTradeOffer(Items.ARMOR_STAND, 1, 2, 6, 4);
         
-        return new VillagerTrades.ItemListing[] { option1, option2, };
+        return new VillagerTrades.ItemListing[] { option1, option2, option3, };
     }
     
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_spruce"
+    },
+    "facing=east": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_spruce",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_spruce",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neovillagersdesigner:block/chests/decoration_chest_spruce",
+      "y": 270
+    }
+  }
+}

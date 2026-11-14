@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " P "
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:oak_slab"
+    },
+    "S": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_oak",
+    "count": 1
+  }
+}

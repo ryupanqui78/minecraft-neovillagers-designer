@@ -1,0 +1,7 @@
+{
+  "parent": "neovillagersdesigner:block/base_chest",
+  "textures": {
+    "particle": "minecraft:block/birch_planks",
+    "chest":"neovillagersdesigner:block/chests/birch_chest"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "chest",
+  "ingredient": {
+    "item": "minecraft:spruce_log"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_chest_spruce",
+    "count": 1
+  }
+}

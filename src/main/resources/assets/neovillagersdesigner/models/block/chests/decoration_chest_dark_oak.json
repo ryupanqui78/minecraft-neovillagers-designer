@@ -1,0 +1,7 @@
+{
+  "parent": "neovillagersdesigner:block/base_chest",
+  "textures": {
+    "particle": "minecraft:block/dark_oak_planks",
+    "chest":"neovillagersdesigner:block/chests/dark_oak_chest"
+  }
+}
