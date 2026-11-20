@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": {
+    "item": "minecraft:oak_log"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_oak",
+    "count": 1
+  }
+}

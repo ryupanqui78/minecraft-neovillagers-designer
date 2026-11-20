@@ -1,0 +1,8 @@
+{
+  "parent": "neovillagersdesigner:block/base_composter",
+  "textures": {
+    "top": "neovillagersdesigner:block/composter/bamboo_composter_top",
+    "bottom": "neovillagersdesigner:block/composter/bamboo_composter_bottom",
+    "side": "neovillagersdesigner:block/composter/bamboo_composter_side"
+  }
+}

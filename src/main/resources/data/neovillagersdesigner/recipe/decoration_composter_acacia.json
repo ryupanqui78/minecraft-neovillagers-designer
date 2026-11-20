@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:acacia_slab"
+    },
+    "S": {
+      "item": "minecraft:composter"
+    }
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_acacia",
+    "count": 1
+  }
+}

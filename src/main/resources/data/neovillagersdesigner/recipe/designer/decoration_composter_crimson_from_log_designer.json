@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": {
+    "item": "minecraft:crimson_stem"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_crimson",
+    "count": 1
+  }
+}

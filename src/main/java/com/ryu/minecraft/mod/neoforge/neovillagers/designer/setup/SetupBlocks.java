@@ -27,8 +27,6 @@ public class SetupBlocks {
     private static final List<String> WOOD_TYPES = List.of("acacia", "bamboo", "birch", "cherry", "crimson", "dark_oak",
             "jungle", "mangrove", "oak", "spruce", "warped");
     
-    private static final String DECORATION_COMPOSTER_BLOCK_NAME = "decoration_composter";
-    
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoVillagersDesigner.MODID);
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoVillagersDesigner.MODID);
     
@@ -45,6 +43,8 @@ public class SetupBlocks {
             .registerDecorBarrelBlocks();
     public static final List<DeferredBlock<DecorChestBlock>> LIST_DECOR_CHEST_BLOCKS = SetupBlocks
             .registerDecorChestBlocks();
+    public static final List<DeferredBlock<Block>> LIST_DECOR_COMPOSTER_BLOCKS = SetupBlocks
+            .registerDecorCompostertBlocks();
     public static final DeferredBlock<Block> DECOR_BOX_CROSS_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             SetupBlocks.DECORATION_BOX_CROSS_BLOCK_NAME, Block::new,
             BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops());
@@ -57,9 +57,6 @@ public class SetupBlocks {
     public static final DeferredBlock<DecorCauldronBlock> DECOR_CAULDRON_BLOCK = SetupBlocks.BLOCKS.registerBlock(
             DecorCauldronBlock.BLOCK_NAME, DecorCauldronBlock::new,
             BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
-    public static final DeferredBlock<Block> DECOR_COMPOSTER_BLOCK = SetupBlocks.BLOCKS.registerBlock(
-            SetupBlocks.DECORATION_COMPOSTER_BLOCK_NAME, Block::new,
-            BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops());
     public static final DeferredBlock<DecorWaterCauldronBlock> DECOR_WATER_CAULDRON_BLOCK = SetupBlocks.BLOCKS
             .registerBlock(DecorWaterCauldronBlock.BLOCK_NAME, DecorWaterCauldronBlock::new,
                     BlockBehaviour.Properties.of().strength(2F).requiresCorrectToolForDrops());
@@ -72,8 +69,6 @@ public class SetupBlocks {
             .registerSimpleBlockItem(SetupBlocks.DECOR_BOX_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_CAULDRON_BLOCK);
-    public static final DeferredItem<BlockItem> DECOR_COMPOSTER_BLOCK_ITEM = SetupBlocks.ITEMS
-            .registerSimpleBlockItem(SetupBlocks.DECOR_COMPOSTER_BLOCK);
     public static final DeferredItem<BlockItem> DECOR_WATER_CAULDRON_BLOCK_ITEM = SetupBlocks.ITEMS
             .registerSimpleBlockItem(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK);
     
@@ -84,6 +79,9 @@ public class SetupBlocks {
         SetupBlocks.BLOCKS.addAlias(
                 ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_chest"),
                 ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_chest_oak"));
+        SetupBlocks.BLOCKS.addAlias(
+                ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_composter"),
+                ResourceLocation.fromNamespaceAndPath(NeoVillagersDesigner.MODID, "decoration_composter_oak"));
     }
     
     private static List<DeferredBlock<DecorBarrelBlock>> registerDecorBarrelBlocks() {
@@ -94,6 +92,12 @@ public class SetupBlocks {
     private static List<DeferredBlock<DecorChestBlock>> registerDecorChestBlocks() {
         return SetupBlocks.WOOD_TYPES.stream().map(
                 woodType -> SetupBlocks.registerSingleBlock("decoration_chest_" + woodType, DecorChestBlock::new, 1.2f))
+                .toList();
+    }
+    
+    private static List<DeferredBlock<Block>> registerDecorCompostertBlocks() {
+        return SetupBlocks.WOOD_TYPES.stream()
+                .map(woodType -> SetupBlocks.registerSingleBlock("decoration_composter_" + woodType, Block::new, 1.0f))
                 .toList();
     }
     

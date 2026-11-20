@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": {
+    "item": "minecraft:birch_log"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_birch",
+    "count": 1
+  }
+}

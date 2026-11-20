@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": {
+    "item": "minecraft:warped_stem"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_warped",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": {
+    "item": "minecraft:jungle_log"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_jungle",
+    "count": 1
+  }
+}

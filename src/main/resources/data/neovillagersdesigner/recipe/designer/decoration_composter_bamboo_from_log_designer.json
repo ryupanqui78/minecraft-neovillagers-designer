@@ -1,0 +1,11 @@
+{
+  "type": "neovillagersdesigner:designer",
+  "group": "composter",
+  "ingredient": {
+    "item": "minecraft:bamboo_block"
+  },
+  "result": {
+    "id": "neovillagersdesigner:decoration_composter_bamboo",
+    "count": 1
+  }
+}

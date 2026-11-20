@@ -28,6 +28,8 @@ public class Designer extends Worker {
             Collectors.toMap(block -> BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), block -> block.asItem()));
     private static final Map<String, Item> CHESTS = SetupBlocks.LIST_DECOR_CHEST_BLOCKS.stream().collect(
             Collectors.toMap(block -> BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), block -> block.asItem()));
+    private static final Map<String, Item> COMPOSTERS = SetupBlocks.LIST_DECOR_COMPOSTER_BLOCKS.stream().collect(
+            Collectors.toMap(block -> BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), block -> block.asItem()));
     
     @Override
     protected ItemListing[] getLevel1() {
@@ -53,8 +55,15 @@ public class Designer extends Worker {
     @Override
     protected ItemListing[] getLevel2() {
         final ItemListing option1 = new ItemForEmeraldTradeOffer(Items.ITEM_FRAME, 5, 1, 12, 6);
-        final ItemListing option2 = new ItemForEmeraldTradeOffer(SetupBlocks.DECOR_COMPOSTER_BLOCK.get().asItem(), 2, 3,
-                8, 4);
+        final ItemListing option2 = new ItemForEmeraldVillagerType(2, 3, 8, 4,
+                ImmutableMap.<VillagerType, Item> builder()
+                        .put(VillagerType.PLAINS, COMPOSTERS.get("decoration_composter_oak"))
+                        .put(VillagerType.TAIGA, COMPOSTERS.get("decoration_composter_spruce"))
+                        .put(VillagerType.SNOW, COMPOSTERS.get("decoration_composter_spruce"))
+                        .put(VillagerType.DESERT, COMPOSTERS.get("decoration_composter_oak"))
+                        .put(VillagerType.JUNGLE, COMPOSTERS.get("decoration_composter_jungle"))
+                        .put(VillagerType.SAVANNA, COMPOSTERS.get("decoration_composter_acacia"))
+                        .put(VillagerType.SWAMP, COMPOSTERS.get("decoration_composter_mangrove")).build());
         final ItemListing option3 = new ItemForEmeraldTradeOffer(Items.BOOKSHELF, 8, 1, 12, 2);
         
         return new VillagerTrades.ItemListing[] { option1, option2, option3, };
