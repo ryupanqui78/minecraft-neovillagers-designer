@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "neovillagersdesigner:decoration_chest_jungle"
+    },
+    {
+      "item": "neovillagersdesigner:decoration_chest_jungle"
+    }
+  ],
+  "result": {
+    "id": "neovillagersdesigner:decoration_double_chest_jungle",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_bamboo" },
+    "facing=east": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_bamboo" },
+    "facing=south": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_bamboo" },
+    "facing=west": { "model": "neovillagersdesigner:block/chests/decoration_double_chest_part_bamboo" }
+  }
+}

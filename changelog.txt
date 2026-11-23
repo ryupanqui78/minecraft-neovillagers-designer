@@ -1,6 +1,8 @@
 1.1.16-1.21.1
  - Adding Barrels based in the wood.
  - Adding Chest based in the wood.
+ - Adding Composter based in wood.
+ - Adding Double-chest based in wood.
 1.1.15-1.21.1:
  - Updating to Minecraft 1.21.1.
 1.0.14-1.20.6:

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "neovillagersdesigner:decoration_chest_acacia"
+    },
+    {
+      "item": "neovillagersdesigner:decoration_chest_acacia"
+    }
+  ],
+  "result": {
+    "id": "neovillagersdesigner:decoration_double_chest_acacia",
+    "count": 1
+  }
+}

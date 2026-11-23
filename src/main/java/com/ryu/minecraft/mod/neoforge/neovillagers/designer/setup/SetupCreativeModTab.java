@@ -21,14 +21,15 @@ public class SetupCreativeModTab {
                             .title(Component.translatable("itemGroup.neovillagersdesigner.decoration"))
                             .icon(() -> SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get().getDefaultInstance())
                             .displayItems((parameters, output) -> {
-                                SetupBlocks.LIST_DECOR_BARREL_BLOCKS.forEach(output::accept);
-                                SetupBlocks.LIST_DECOR_CHEST_BLOCKS.forEach(output::accept);
-                                SetupBlocks.LIST_DECOR_COMPOSTER_BLOCKS.forEach(output::accept);
                                 output.accept(SetupBlocks.DECOR_BOX_CROSS_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_FIX_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_BOX_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_CAULDRON_BLOCK_ITEM.get());
                                 output.accept(SetupBlocks.DECOR_WATER_CAULDRON_BLOCK_ITEM.get());
+                                SetupBlocks.LIST_DECOR_BARREL_BLOCKS.forEach(output::accept);
+                                SetupBlocks.LIST_DECOR_CHEST_BLOCKS.forEach(output::accept);
+                                SetupBlocks.LIST_DECOR_COMPOSTER_BLOCKS.forEach(output::accept);
+                                SetupBlocks.LIST_DECOR_DOUBLE_CHEST_BLOCKS.forEach(output::accept);
                             }).build());
     
     private SetupCreativeModTab() {

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "neovillagersdesigner:decoration_chest_crimson"
+    },
+    {
+      "item": "neovillagersdesigner:decoration_chest_crimson"
+    }
+  ],
+  "result": {
+    "id": "neovillagersdesigner:decoration_double_chest_crimson",
+    "count": 1
+  }
+}
